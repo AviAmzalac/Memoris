@@ -8,5 +8,6 @@
     <string name="button_medium">MEDIUM</string>
     <string name="button_hard">HARD</string>
     <string name="button_competitive">NIGHTMARE</string>
+    <string name="button_reset">Reset Datas</string>
 
 </resources>

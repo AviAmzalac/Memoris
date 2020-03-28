@@ -16,4 +16,8 @@ public class MainActivity extends AppCompatActivity {
         Intent gameActivity = new Intent(MainActivity.this, difficulty_page.class);
         startActivity(gameActivity);
     }
+    public void goto_setting(View view) {
+        Intent gameActivity = new Intent(MainActivity.this, setting.class);
+        startActivity(gameActivity);
+    }
 }
