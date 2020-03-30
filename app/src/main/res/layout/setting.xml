@@ -7,70 +7,75 @@
     android:background="@color/bleu">
 
 
+    <Button
+        android:id="@+id/button_neightmare"
+        android:layout_width="285dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="224dp"
+        android:background="@drawable/white_round_button"
+        android:text="@string/button_reset"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.628"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/night" />
+
     <ImageButton
         android:id="@+id/imageButton3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginEnd="341dp"
+        android:layout_marginBottom="20dp"
         android:background="@android:color/transparent"
         android:onClick="goto_main"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/back_arrow" />
 
     <Switch
-        android:id="@+id/sound"
+        android:id="@+id/mute"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:text="Sound   "
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/button_mute"
         android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/nuit"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.395"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Switch
-        android:id="@+id/nuit"
+        android:id="@+id/night"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Night Mode   "
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/sound"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.469" />
-
-    <Button
-        android:id="@+id/reset"
-        android:layout_width="255dp"
-        android:layout_height="50dp"
         android:layout_marginTop="40dp"
-        android:background="@drawable/white_round_button"
-        android:text="@string/button_reset"
+        android:text="@string/button_night"
         android:textSize="36sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/nuit"
-        app:layout_constraintTop_toBottomOf="@+id/fr" />
+        app:layout_constraintStart_toStartOf="@+id/mute"
+        app:layout_constraintTop_toBottomOf="@+id/mute" />
 
     <ImageView
-        android:id="@+id/fr"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="48dp"
-        app:layout_constraintStart_toStartOf="@+id/nuit"
-        app:layout_constraintTop_toBottomOf="@+id/nuit"
+        android:id="@+id/imageView2"
+        android:layout_width="152dp"
+        android:layout_height="165dp"
+        android:layout_marginTop="36dp"
+        app:layout_constraintEnd_toEndOf="@+id/night"
+        app:layout_constraintHorizontal_bias="0.275"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/night"
         app:srcCompat="@drawable/fr" />
 
     <ImageView
-        android:id="@+id/en"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        app:layout_constraintEnd_toEndOf="@+id/nuit"
-        app:layout_constraintStart_toEndOf="@+id/fr"
-        app:layout_constraintTop_toTopOf="@+id/fr"
+        android:id="@+id/imageView3"
+        android:layout_width="151dp"
+        android:layout_height="165dp"
+        android:layout_marginStart="36dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="@+id/imageView2"
         app:srcCompat="@drawable/en" />
 
 </android.support.constraint.ConstraintLayout>

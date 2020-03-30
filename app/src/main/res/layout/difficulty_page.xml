@@ -10,8 +10,8 @@
     <Button
         android:id="@+id/button_easy"
         android:layout_width="279dp"
-        android:layout_height="124dp"
-        android:layout_marginTop="30dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="28dp"
         android:background="@drawable/white_round_button"
         android:text="@string/button_easy"
         android:textSize="36sp"
@@ -23,7 +23,7 @@
     <Button
         android:id="@+id/button_medium"
         android:layout_width="279dp"
-        android:layout_height="124dp"
+        android:layout_height="110dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/white_round_button"
         android:text="@string/button_medium"
@@ -36,7 +36,7 @@
     <Button
         android:id="@+id/button_hard"
         android:layout_width="279dp"
-        android:layout_height="124dp"
+        android:layout_height="110dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/white_round_button"
         android:text="@string/button_hard"
@@ -47,9 +47,9 @@
 
 
     <Button
-        android:id="@+id/reset"
+        android:id="@+id/button_neightmare"
         android:layout_width="279dp"
-        android:layout_height="124dp"
+        android:layout_height="110dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/white_round_button"
         android:text= "@string/button_competitive"
@@ -62,10 +62,12 @@
         android:id="@+id/imageButton3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:srcCompat="@drawable/back_arrow"
         android:background="@android:color/transparent"
         android:onClick="goto_main"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/back_arrow" />
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

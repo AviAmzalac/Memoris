@@ -47,7 +47,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/grey_round_button"
-        android:onClick="goto_setting_page"
+        android:onClick="goto_setting"
         android:text="@string/settings"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
