@@ -16,9 +16,15 @@
         android:text="@string/button_easy"
         android:textSize="36sp"
 <<<<<<< HEAD
+<<<<<<< HEAD
         android:onClick="goto_timer_page"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+=======
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+
+>>>>>>> d77bac1d5bae5f60c8260a737aed7e1204f7e34f
 =======
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

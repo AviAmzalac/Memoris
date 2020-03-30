@@ -18,11 +18,14 @@ public class difficulty_page extends AppCompatActivity {
         startActivity(gameActivity);
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     public void goto_timer_page(View view){
         Intent gameActivity = new Intent(difficulty_page.this, timer_page.class);
         startActivity(gameActivity);
     }
+=======
+>>>>>>> d77bac1d5bae5f60c8260a737aed7e1204f7e34f
 =======
 >>>>>>> d77bac1d5bae5f60c8260a737aed7e1204f7e34f
 }
