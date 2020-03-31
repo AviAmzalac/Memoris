@@ -37,8 +37,7 @@
                 android:value=".MainActivity"/>
         </activity>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
         <activity android:name=".timer_page"
             android:label="timer_page"
             android:parentActivityName="difficulty_page">
@@ -47,10 +46,7 @@
                 android:value=".difficulty_page"/>
         </activity>
 
-=======
->>>>>>> d77bac1d5bae5f60c8260a737aed7e1204f7e34f
-=======
->>>>>>> d77bac1d5bae5f60c8260a737aed7e1204f7e34f
+
         <activity android:name=".setting"
             android:label="settings"
             android:parentActivityName="MainActivity">
