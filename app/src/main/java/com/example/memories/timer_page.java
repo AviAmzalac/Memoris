@@ -1,7 +1,7 @@
 package com.example.memories;
 import android.content.Intent;
 import android.os.CountDownTimer;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,6 +20,8 @@ public class timer_page extends AppCompatActivity implements View.OnClickListene
 
         @Override
         public void onFinish() {
+            Intent gameActivity = new Intent(timer_page.this, jeu.class);
+            startActivity(gameActivity);
         }
     };
 
