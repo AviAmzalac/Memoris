@@ -55,6 +55,13 @@
                 android:value=".MainActivity"/>
         </activity>
 
+        <activity android:name=".reponse_easy"
+            android:label="Reponse_easy"
+            android:parentActivityName=".timer_page">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+        </activity>
 
     </application>
 

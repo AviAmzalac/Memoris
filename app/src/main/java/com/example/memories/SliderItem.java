@@ -1,5 +1,4 @@
 package com.example.memories;
-import android.transition.Slide;
 
 public class SliderItem {
 

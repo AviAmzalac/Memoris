@@ -17,6 +17,34 @@
     <string name="button_mute">Mute "  "</string>
     <string name="button_night">Night Mode "  "</string>
     <string name="button_reset">Reset Datas</string>
+    <!-- jeu -->
+    <string name="coffee">coffee</string>
+    <string name="dog">dog</string>
+    <string name="apple">apple</string>
+    <string name="sun">sun</string>
+    <string name="button_3">Mute "  "</string>
+    <string name="button_4">Mute "  "</string>
+    <string name="button_5">Mute "  "</string>
+    <string name="button_6">Mute "  "</string>
+    <string name="button_7">Mute "  "</string>
+    <string name="button_8">Mute "  "</string>
+    <string name="button_9">Mute "  "</string>
+    <string name="button_10">Mute "  "</string>
+    <string name="button_11">Mute "  "</string>
+    <string name="button_12">Mute "  "</string>
+    <string name="button_13">Mute "  "</string>
+    <string name="button_14">Mute "  "</string>
+    <string name="button_15">Mute "  "</string>
+    <string name="button_16">Mute "  "</string>
+    <string name="button_17">Mute "  "</string>
+    <string name="button_18">Mute "  "</string>
+    <string name="button_19">Mute "  "</string>
+    <string name="button_20">Mute "  "</string>
+    <string name="button_21">Mute "  "</string>
+    <string name="button_22">Mute "  "</string>
+    <string name="button_23">Mute "  "</string>
+    <string name="button_24">Mute "  "</string>
+    <string name="button_25">Mute "  "</string>
 
 
 </resources>
