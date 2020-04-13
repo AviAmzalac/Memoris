@@ -6,8 +6,6 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
-import android.view.View;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +14,8 @@ public class jeu extends AppCompatActivity {
 
     private ViewPager2 viewPager2;
     private Handler sliderHandler = new Handler();
+
+
 
     //---------------------------------------------------------------------------------------------
     //timer pour passer a la page suivante
@@ -37,16 +37,18 @@ public class jeu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.jeu);
+         ArrayList<Integer> List_reponse = new ArrayList<>();
+        List_reponse.add(R.drawable.shark);
+        List_reponse.add(R.drawable.apple);
+        List_reponse.add(R.drawable.butterfly);
 
         viewPager2 = findViewById(R.id.viewPagerImageSliderEasy);
         viewPager2.setUserInputEnabled(false);
         final List<SliderItem> sliderItems = new ArrayList<>();
-        sliderItems.add(new SliderItem(R.drawable.shark));
-        sliderItems.add(new SliderItem(R.drawable.apple));
-        sliderItems.add(new SliderItem(R.drawable.butterfly));
-        sliderItems.add(new SliderItem(R.drawable.dog));
-        sliderItems.add(new SliderItem(R.drawable.whale));
-        sliderItems.add(new SliderItem(R.drawable.sheep));
+        sliderItems.add(new SliderItem(List_reponse.get(0)));
+        sliderItems.add(new SliderItem(List_reponse.get(1)));
+        sliderItems.add(new SliderItem(List_reponse.get(2)));
+
 
         viewPager2.setAdapter(new SliderAdapter(sliderItems, viewPager2));
         viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
@@ -66,7 +68,7 @@ public class jeu extends AppCompatActivity {
         @Override
         public void run() {
             viewPager2.setCurrentItem(viewPager2.getCurrentItem() + 1);
-            if(viewPager2.getCurrentItem() == 5){
+            if(viewPager2.getCurrentItem() == 2){
                 timer_to_next.start();
             }
         }

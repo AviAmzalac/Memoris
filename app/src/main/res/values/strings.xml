@@ -16,35 +16,47 @@
     <!-- Settings -->
     <string name="button_mute">Mute "  "</string>
     <string name="button_night">Night Mode "  "</string>
-    <string name="button_reset">Reset Datas</string>
+    <string name="button_reset">Reset Data</string>
     <!-- jeu -->
-    <string name="coffee">coffee</string>
-    <string name="dog">dog</string>
+    <!-- -->
     <string name="apple">apple</string>
+    <string name="balloon">balloon</string>
+    <string name="banana">banana</string>
+    <string name="bellpepper">bell pepper</string>
+    <string name="bicycle">bicycle</string>
+    <string name="bird">bird</string>
+    <string name="butterfly">butterfly</string>
+    <string name="cabbage">cabbage</string>
+    <string name="camera">camera</string>
+    <string name="car">car</string>
+    <string name="carrot">carrot</string>
+    <string name="cat">cat</string>
+    <string name="cherry">cherry</string>
+    <string name="coffee">coffee</string>
+    <string name="dice">dice</string>
+    <string name="dog">dog</string>
+    <string name="elephant">elephant</string>
+    <string name="hammer">hammer</string>
+    <string name="hat">hat</string>
+    <string name="icecream">ice cream</string>
+    <string name="juice">juice</string>
+    <string name="key">key</string>
+    <string name="laptop">laptop</string>
+    <string name="lemon">lemon</string>
+    <string name="orange">orange</string>
+    <string name="paintbrush">paintbrush</string>
+    <string name="panda">panda</string>
+    <string name="pencil">pencil</string>
+    <string name="popcorn">popcorn</string>
+    <string name="present">present</string>
+    <string name="screw">screw</string>
+    <string name="shark">shark</string>
+    <string name="sheep">sheep</string>
+    <string name="smartphone">smartphone</string>
+    <string name="strawberry">strawberry</string>
     <string name="sun">sun</string>
-    <string name="button_3">Mute "  "</string>
-    <string name="button_4">Mute "  "</string>
-    <string name="button_5">Mute "  "</string>
-    <string name="button_6">Mute "  "</string>
-    <string name="button_7">Mute "  "</string>
-    <string name="button_8">Mute "  "</string>
-    <string name="button_9">Mute "  "</string>
-    <string name="button_10">Mute "  "</string>
-    <string name="button_11">Mute "  "</string>
-    <string name="button_12">Mute "  "</string>
-    <string name="button_13">Mute "  "</string>
-    <string name="button_14">Mute "  "</string>
-    <string name="button_15">Mute "  "</string>
-    <string name="button_16">Mute "  "</string>
-    <string name="button_17">Mute "  "</string>
-    <string name="button_18">Mute "  "</string>
-    <string name="button_19">Mute "  "</string>
-    <string name="button_20">Mute "  "</string>
-    <string name="button_21">Mute "  "</string>
-    <string name="button_22">Mute "  "</string>
-    <string name="button_23">Mute "  "</string>
-    <string name="button_24">Mute "  "</string>
-    <string name="button_25">Mute "  "</string>
-
+    <string name="tiger">tiger</string>
+    <string name="watermelon">watermelon</string>
+    <string name="whale">whale</string>
 
 </resources>
