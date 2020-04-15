@@ -15,6 +15,10 @@ public class Jeu extends AppCompatActivity {
     private ViewPager2 viewPager2;
     private Handler sliderHandler = new Handler();
 
+    static ArrayList<Integer> list_rep = new ArrayList<>();
+    static ArrayList<Integer> List_affiche = new ArrayList<>();
+
+
     //---------------------------------------------------------------------------------------------
     //timer pour passer a la page suivante
     CountDownTimer timer_to_next = new CountDownTimer(1000, 1000) {
@@ -36,8 +40,54 @@ public class Jeu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.jeu);
 
+
         //------------------------------------------------------------------
 
+        viewPager2 = findViewById(R.id.viewPagerImageSliderEasy);
+        viewPager2.setUserInputEnabled(false);
+
+        // CREATION LISTE DES MOTS DU JEU ( A COMPLETER A CHAQUE AJOUT DE MOT)
+        ArrayList<Integer> List_mot = new ArrayList<>();
+        List_mot.add(R.string.apple);
+        List_mot.add(R.string.balloon);
+        List_mot.add(R.string.banana);
+        List_mot.add(R.string.bellpepper);
+        List_mot.add(R.string.bicycle);
+        List_mot.add(R.string.bird);
+        List_mot.add(R.string.butterfly);
+        List_mot.add(R.string.cabbage);
+        List_mot.add(R.string.camera);
+        List_mot.add(R.string.car);
+        List_mot.add(R.string.carrot);
+        List_mot.add(R.string.cat);
+        List_mot.add(R.string.cherry);
+        List_mot.add(R.string.coffee);
+        List_mot.add(R.string.dice);
+        List_mot.add(R.string.dog);
+        List_mot.add(R.string.elephant);
+        List_mot.add(R.string.hammer);
+        List_mot.add(R.string.hat);
+        List_mot.add(R.string.icecream);
+        List_mot.add(R.string.juice);
+        List_mot.add(R.string.key);
+        List_mot.add(R.string.laptop);
+        List_mot.add(R.string.lemon);
+        List_mot.add(R.string.orange);
+        List_mot.add(R.string.paintbrush);
+        List_mot.add(R.string.panda);
+        List_mot.add(R.string.pencil);
+        List_mot.add(R.string.popcorn);
+        List_mot.add(R.string.present);
+        List_mot.add(R.string.screw);
+        List_mot.add(R.string.shark);
+        List_mot.add(R.string.sheep);
+        List_mot.add(R.string.smartphone);
+        List_mot.add(R.string.strawberry);
+        List_mot.add(R.string.sun);
+        List_mot.add(R.string.tiger);
+        List_mot.add(R.string.watermelon);
+        List_mot.add(R.string.whale);
+        // CREATION LISTE DES IMAGES ( A COMPLETER A CHAQUE AJOUT D'IMAGE)
         ArrayList<Integer> List_Items = new ArrayList<>();
         List_Items.add(R.drawable.apple);
         List_Items.add(R.drawable.balloon);
@@ -79,21 +129,30 @@ public class Jeu extends AppCompatActivity {
         List_Items.add(R.drawable.watermelon);
         List_Items.add(R.drawable.whale);
 
-        //------------------------------------------------------------------
-
-        ArrayList<Integer> List_Slider_BasedOn_reponse = new ArrayList<>();
-        for (int i=0;i<6;i++){
-            List_Slider_BasedOn_reponse.add(Integer.parseInt(Easy_User_Interface.list_rep.get(i)));
+        // LISTE DES MOTS AFFICHES POUR LE JOUEUR ---------------------------------------------------------------------------
+        ArrayList<Integer> List_affiche_image = new ArrayList<>();
+        int x;
+        int nb_mot_affiche = 12;
+        for(int i = 0; i<= nb_mot_affiche; i++){
+            do{ x=(int)(Math.random()*(List_mot.size()-1+1)+0);}
+            while(List_affiche.contains(List_mot.get(x)));
+            List_affiche.add(List_mot.get(x));
+            List_affiche_image.add((List_Items.get(x)));
         }
 
+        // LISTE DES REPONSES --------------------------------------------------------------------------------------------------
+        ArrayList<Integer> List_reponse = new ArrayList<>();
+        int nb_reponse = 6;
+        for(int i = 0; i<= nb_reponse; i++){
+            do{ x=(int)(Math.random()*(List_affiche.size()-1+1)+0);}
+            while(List_reponse.contains(List_affiche.get(x)));
+            List_reponse.add(List_affiche.get(x));
+            list_rep.add(List_affiche_image.get(x));
+        }
 
-        //------------------------------------------------------------------
-
-        viewPager2 = findViewById(R.id.viewPagerImageSliderEasy);
-        viewPager2.setUserInputEnabled(false);
         final List<SliderItem> sliderItems = new ArrayList<>();
-        for (int i=0;i<Easy_User_Interface.list_rep.size();i++) {
-            sliderItems.add(new SliderItem(List_Slider_BasedOn_reponse.get(i)));
+        for (int i=0;i<6;i++) {
+            sliderItems.add(new SliderItem(list_rep.get(i)));
         }
 
 
