@@ -14,11 +14,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void goto_difficulty_page(View view) {
-        Intent gameActivity = new Intent(MainActivity.this, difficulty_page.class);
+        Intent gameActivity = new Intent(MainActivity.this, Difficulty_page.class);
         startActivity(gameActivity);
     }
     public void goto_setting(View view) {
-        Intent gameActivity = new Intent(MainActivity.this, setting.class);
+        Intent gameActivity = new Intent(MainActivity.this, Setting.class);
         startActivity(gameActivity);
     }
 }

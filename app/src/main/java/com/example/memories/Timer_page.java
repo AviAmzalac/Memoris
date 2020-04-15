@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class timer_page extends AppCompatActivity implements View.OnClickListener {
+public class Timer_page extends AppCompatActivity implements View.OnClickListener {
 
     private Button btnrdy;
     private TextView countdown;
@@ -20,7 +20,7 @@ public class timer_page extends AppCompatActivity implements View.OnClickListene
 
         @Override
         public void onFinish() {
-            Intent gameActivity = new Intent(timer_page.this, jeu.class);
+            Intent gameActivity = new Intent(Timer_page.this, Jeu.class);
             startActivity(gameActivity);
         }
     };

@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 
-public class difficulty_page extends AppCompatActivity {
+public class Difficulty_page extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,12 +16,12 @@ public class difficulty_page extends AppCompatActivity {
     }
 
     public void goto_main(View view){
-        Intent gameActivity = new Intent(difficulty_page.this, MainActivity.class);
+        Intent gameActivity = new Intent(Difficulty_page.this, MainActivity.class);
         startActivity(gameActivity);
     }
 
     public void goto_timer_page(View view){
-        Intent gameActivity = new Intent(difficulty_page.this, timer_page.class);
+        Intent gameActivity = new Intent(Difficulty_page.this, Timer_page.class);
         startActivity(gameActivity);
     }
 

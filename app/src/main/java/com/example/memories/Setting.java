@@ -6,7 +6,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class setting extends AppCompatActivity {
+public class Setting extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,7 +15,7 @@ public class setting extends AppCompatActivity {
     }
 
     public void goto_main(View view){
-        Intent gameActivity = new Intent(setting.this, MainActivity.class);
+        Intent gameActivity = new Intent(Setting.this, MainActivity.class);
         startActivity(gameActivity);
     }
 }

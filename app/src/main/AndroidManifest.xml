@@ -8,7 +8,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:hardwareAccelerated="false"
+        android:largeHeap="true">
 
 
         <activity android:name=".MainActivity">
@@ -20,7 +22,7 @@
         </activity>
 
 
-        <activity android:name=".jeu"
+        <activity android:name=".Jeu"
             android:label="jeu"
             android:parentActivityName="MainActivity">
             <meta-data
@@ -29,7 +31,7 @@
         </activity>
 
 
-        <activity android:name=".difficulty_page"
+        <activity android:name=".Difficulty_page"
             android:label="difficulty_page"
             android:parentActivityName="MainActivity">
             <meta-data
@@ -38,16 +40,16 @@
         </activity>
 
 
-        <activity android:name=".timer_page"
+        <activity android:name=".Timer_page"
             android:label="timer_page"
-            android:parentActivityName="difficulty_page">
+            android:parentActivityName=".Difficulty_page">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".difficulty_page"/>
+                android:value=".Difficulty_page"/>
         </activity>
 
 
-        <activity android:name=".setting"
+        <activity android:name=".Setting"
             android:label="settings"
             android:parentActivityName="MainActivity">
             <meta-data
@@ -55,9 +57,9 @@
                 android:value=".MainActivity"/>
         </activity>
 
-        <activity android:name=".reponse_easy"
+        <activity android:name=".Easy_User_Interface"
             android:label="Reponse_easy"
-            android:parentActivityName=".timer_page">
+            android:parentActivityName=".Timer_page">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity"/>
