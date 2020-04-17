@@ -60,6 +60,17 @@
         <activity android:name=".Easy_User_Interface"
             android:label="Reponse_easy"
             android:parentActivityName=".Timer_page">
+<<<<<<< HEAD
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+        </activity>
+
+        <activity android:name=".Results_page"
+            android:label="Results_page"
+            android:parentActivityName=".MainActivity">
+=======
+>>>>>>> b177a05e0ae8baec6ebc3f365c01897206e82a36
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity"/>

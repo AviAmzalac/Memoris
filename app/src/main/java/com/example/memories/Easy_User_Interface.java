@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,10 +13,13 @@ import java.util.ArrayList;
 public class Easy_User_Interface extends AppCompatActivity {
 
     static ArrayList<Integer> list_rep = new ArrayList<>();
+    static int score;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        setContentView(R.layout.easy_user_interface);
 
         setContentView(R.layout.reponse_easy);
         Button button_1 = findViewById(R.id.button_1);
@@ -64,4 +68,14 @@ public class Easy_User_Interface extends AppCompatActivity {
         startActivity(gameActivity);
     }
 
+    public void goto_leaderboard(View view){
+        Intent intent = new Intent(getApplicationContext(), Results_page.class);
+        intent.putExtra("SCORE", score);
+        startActivity(intent);
+    }
+
+    //////////////////////////////
+    public void addFakeScore(View view) {
+        score+=1;
+    }
 }
