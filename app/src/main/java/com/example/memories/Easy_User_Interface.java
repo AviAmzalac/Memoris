@@ -4,7 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
+
+
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,8 +21,6 @@ public class Easy_User_Interface extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.easy_user_interface);
-
-        setContentView(R.layout.reponse_easy);
         Button button_1 = findViewById(R.id.button_1);
         Button button_2 = findViewById(R.id.button_2);
         Button button_3 = findViewById(R.id.button_3);
@@ -60,6 +59,9 @@ public class Easy_User_Interface extends AppCompatActivity {
             Integer text = Jeu.List_affiche.get(i);
             List_button.get(i).setText(getResources().getString(text));
         }
+        ////////////////////////////////
+
+
     }
 
     public void goto_main(View view){
