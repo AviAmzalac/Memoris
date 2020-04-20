@@ -6,7 +6,6 @@
     <string name="button_back">Back</string>
     <string name="button_ready">READY</string>
 
-
     <!-- New game -->
     <string name="button_easy">EASY</string>
     <string name="button_medium">MEDIUM</string>
@@ -14,11 +13,12 @@
     <string name="button_competitive">NIGHTMARE </string>
 
     <!-- Settings -->
-    <string name="button_mute">Mute "  "</string>
+    <string name="musiqueLabel">Musique : </string>
     <string name="button_night">Night Mode "  "</string>
     <string name="button_reset">Reset Data</string>
+    <string name="soundicon">SoundIcon</string>
+
     <!-- Jeu -->
-    <!-- -->
     <string name="apple">apple</string>
     <string name="balloon">balloon</string>
     <string name="banana">banana</string>

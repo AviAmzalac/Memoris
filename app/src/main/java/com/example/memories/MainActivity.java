@@ -9,6 +9,8 @@ import android.os.PowerManager;
 import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.nio.channels.SeekableByteChannel;
+
 public class MainActivity extends AppCompatActivity {
 
     HomeWatcher mHomeWatcher;
@@ -49,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
         Intent music = new Intent();
         music.setClass(this, Music_Background.class);
         startService(music);
-
 
         mHomeWatcher = new HomeWatcher(this);
         mHomeWatcher.setOnHomePressedListener(new HomeWatcher.OnHomePressedListener() {
