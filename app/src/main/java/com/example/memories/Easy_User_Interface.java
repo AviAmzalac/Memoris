@@ -9,7 +9,8 @@ import android.os.IBinder;
 import android.os.PowerManager;
 import android.view.View;
 import android.widget.Button;
-
+import android.widget.ImageView;
+import android.widget.TextView;
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,9 +19,6 @@ import java.util.ArrayList;
 
 public class Easy_User_Interface extends AppCompatActivity {
 
-    static ArrayList<Integer> list_rep = new ArrayList<>();
-    static int score;
-    //GESTION MUSIC
     HomeWatcher mHomeWatcher;
     private boolean mIsBound = false;
     private Music_Background mServ;
@@ -48,29 +46,53 @@ public class Easy_User_Interface extends AppCompatActivity {
     }
     //////////////////////////////////////////////////////////////////
 
+    static ArrayList<Button> List_button = new ArrayList<>();
+    static int score;
+    static int nb_error =0;
+    static int right_answer = 0;
+    private Button button_1;
+    private Button button_2;
+    private Button button_3;
+
+    private Button button_4;
+    private Button button_5;
+    private Button button_6;
+
+    private Button button_7;
+    private Button button_8;
+    private Button button_9;
+
+    private Button button_10;
+    private Button button_11;
+    private Button button_12;
+    private ImageView game_over;
+    private TextView error_text;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
         setContentView(R.layout.easy_user_interface);
-        Button button_1 = findViewById(R.id.button_1);
-        Button button_2 = findViewById(R.id.button_2);
-        Button button_3 = findViewById(R.id.button_3);
+         button_1 = findViewById(R.id.button_1);
+         button_2 = findViewById(R.id.button_2);
+         button_3 = findViewById(R.id.button_3);
 
-        Button button_4 = findViewById(R.id.button_4);
-        Button button_5 = findViewById(R.id.button_5);
-        Button button_6 = findViewById(R.id.button_6);
+         button_4 = findViewById(R.id.button_4);
+         button_5 = findViewById(R.id.button_5);
+         button_6 = findViewById(R.id.button_6);
 
-        Button button_7 = findViewById(R.id.button_7);
-        Button button_8 = findViewById(R.id.button_8);
-        Button button_9 = findViewById(R.id.button_9);
+         button_7 = findViewById(R.id.button_7);
+         button_8 = findViewById(R.id.button_8);
+         button_9 = findViewById(R.id.button_9);
 
-        Button button_10 = findViewById(R.id.button_10);
-        Button button_11 = findViewById(R.id.button_11);
-        Button button_12 = findViewById(R.id.button_12);
+         button_10 = findViewById(R.id.button_10);
+         button_11 = findViewById(R.id.button_11);
+         button_12 = findViewById(R.id.button_12);
 
-        ArrayList<Button> List_button = new ArrayList<>();
+       //  game_over = findViewById(R.id.game_over);
+
+
         List_button.add(button_1);
         List_button.add(button_2);
         List_button.add(button_3);
@@ -87,13 +109,14 @@ public class Easy_User_Interface extends AppCompatActivity {
         List_button.add(button_11);
         List_button.add(button_12);
 
-        System.out.println("+++++++++++++++"+Jeu.List_affiche);
-        for (int i = 0; i < Jeu.List_affiche.size()-1; i++) {
+
+        System.out.println("+++++++++++++++ LIST AFFICHE"+Jeu.List_affiche);
+        System.out.println("+++++++++++++++ LIST REP"+Jeu.list_rep);
+
+        for (int i = 0; i <= Jeu.List_affiche.size()-1; i++) {
             Integer text = Jeu.List_affiche.get(i);
             List_button.get(i).setText(getResources().getString(text));
         }
-
-        ////////////////////////////////
         //BIND MUSIC SERVICES
         doBindService();
         Intent music = new Intent();
@@ -133,6 +156,7 @@ public class Easy_User_Interface extends AppCompatActivity {
         Intent music = new Intent();
         music.setClass(this, Music_Background.class);
         stopService(music);
+
     }
 
     @Override
@@ -151,6 +175,7 @@ public class Easy_User_Interface extends AppCompatActivity {
                 mServ.pauseMusic();
             }
         }
+
     }
 
     public void goto_main(View view){
@@ -159,8 +184,8 @@ public class Easy_User_Interface extends AppCompatActivity {
         startActivity(gameActivity);
     }
 
-    public void goto_leaderboard(View view){
-        Intent intent = new Intent(getApplicationContext(), Results_page.class);
+    public void goto_leaderboard(){
+        Intent intent = new Intent(Easy_User_Interface.this, Results_page.class);
         intent.putExtra("SCORE", score);
         startActivity(intent);
     }
@@ -168,5 +193,85 @@ public class Easy_User_Interface extends AppCompatActivity {
     //////////////////////////////
     public void addFakeScore(View view) {
         score+=1;
+    }
+    //////////////////////////////
+    public void push_button(View view){
+        if( nb_error < 2) {
+            switch (view.getId()) {
+                case R.id.button_1:
+                    button_1.setVisibility(View.INVISIBLE);
+                    verification(view);
+                    break;
+                case R.id.button_2:
+                    button_2.setVisibility(View.INVISIBLE);
+                    verification(view);
+                    break;
+                case R.id.button_3:
+                    button_3.setVisibility(View.INVISIBLE);
+                    verification(view);
+                    break;
+
+                case R.id.button_4:
+                    button_4.setVisibility(View.INVISIBLE);
+                    verification(view);
+                    break;
+                case R.id.button_5:
+                    button_5.setVisibility(View.INVISIBLE);
+                    verification(view);
+                    break;
+                case R.id.button_6:
+                    button_6.setVisibility(View.INVISIBLE);
+                    verification(view);
+                    break;
+
+                case R.id.button_7:
+                    button_7.setVisibility(View.INVISIBLE);
+                    verification(view);
+                    break;
+                case R.id.button_8:
+                    button_8.setVisibility(View.INVISIBLE);
+                    verification(view);
+                    break;
+                case R.id.button_9:
+                    button_9.setVisibility(View.INVISIBLE);
+                    verification(view);
+                    break;
+
+                case R.id.button_10:
+                    button_10.setVisibility(View.INVISIBLE);
+                    verification(view);
+                    break;
+                case R.id.button_11:
+                    button_11.setVisibility(View.INVISIBLE);
+                    verification(view);
+                    break;
+                case R.id.button_12:
+                    button_12.setVisibility(View.INVISIBLE);
+                    verification(view);
+                    break;
+            }
+        }else {
+
+            goto_leaderboard();
+        }
+    }
+    public boolean verification(View view){
+        int flag = 0;
+        int i=0;
+        while(flag==0 && i < Jeu.list_rep.size()){
+
+            if(view.getId() == Jeu.list_rep.get(i)){
+                System.out.println( view.getId());
+                System.out.println( Jeu.list_rep.get(i));
+                flag = 1;
+                right_answer++;}
+            else{
+                System.out.println( view.getId()+"-----");
+                System.out.println( Jeu.list_rep.get(i));}
+                  i++;
+           }
+        if(flag ==1) {
+            return true;
+        }else{ nb_error++; return false;}
     }
 }

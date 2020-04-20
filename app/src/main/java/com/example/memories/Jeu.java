@@ -163,7 +163,7 @@ public class Jeu extends AppCompatActivity {
         ArrayList<Integer> List_affiche_image = new ArrayList<>();
         int x;
         int nb_mot_affiche = 12;
-        for(int i = 0; i<= nb_mot_affiche; i++){
+        for(int i = 0; i< nb_mot_affiche; i++){
             do{ x=(int)(Math.random()*(List_mot.size()-1+1)+0);}
             while(List_affiche.contains(List_mot.get(x)));
             List_affiche.add(List_mot.get(x));
@@ -173,7 +173,7 @@ public class Jeu extends AppCompatActivity {
         // LISTE DES REPONSES --------------------------------------------------------------------------------------------------
         ArrayList<Integer> List_reponse = new ArrayList<>();
         int nb_reponse = 6;
-        for(int i = 0; i<= nb_reponse; i++){
+        for(int i = 0; i< nb_reponse; i++){
             do{ x=(int)(Math.random()*(List_affiche.size()-1+1)+0);}
             while(List_reponse.contains(List_affiche.get(x)));
             List_reponse.add(List_affiche.get(x));
@@ -181,7 +181,7 @@ public class Jeu extends AppCompatActivity {
         }
 
         final List<SliderItem> sliderItems = new ArrayList<>();
-        for (int i=0;i<6;i++) {
+        for (int i=0;i<nb_reponse;i++) {
             sliderItems.add(new SliderItem(list_rep.get(i)));
         }
 
