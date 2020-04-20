@@ -73,6 +73,10 @@
                 android:value=".MainActivity"/>
         </activity>
 
+        <service
+            android:name=".Music_Background"
+            android:enabled="true" />
+
     </application>
 
 </manifest>

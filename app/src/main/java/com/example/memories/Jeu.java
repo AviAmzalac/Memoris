@@ -1,11 +1,16 @@
 package com.example.memories;
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
+import android.os.IBinder;
+import android.os.PowerManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +22,32 @@ public class Jeu extends AppCompatActivity {
 
     static ArrayList<Integer> list_rep = new ArrayList<>();
     static ArrayList<Integer> List_affiche = new ArrayList<>();
+    HomeWatcher mHomeWatcher;
+    private boolean mIsBound = false;
+    private Music_Background mServ;
+    private ServiceConnection Scon =new ServiceConnection(){
 
+        public void onServiceConnected(ComponentName name, IBinder binder) {
+            mServ = ((Music_Background.ServiceBinder)binder).getService();
+        }
+
+        public void onServiceDisconnected(ComponentName name) {
+            mServ = null;
+        }
+    };
+
+    void doBindService(){
+        bindService(new Intent(this, Music_Background.class), Scon, Context.BIND_AUTO_CREATE);
+        mIsBound = true;
+    }
+
+    void doUnbindService() {
+        if(mIsBound) {
+            unbindService(Scon);
+            mIsBound = false;
+        }
+    }
+    //////////////////////////////////////////////////////////////////
 
     //---------------------------------------------------------------------------------------------
     //timer pour passer a la page suivante
@@ -165,7 +195,41 @@ public class Jeu extends AppCompatActivity {
                 sliderHandler.postDelayed(sliderRunnable, 1500); //Durée pour chaque
             }
         });
+
+        ////////////////////////////////
+        //BIND MUSIC SERVICES
+        doBindService();
+        Intent music = new Intent();
+        music.setClass(this, Music_Background.class);
+        startService(music);
+
+        mHomeWatcher = new HomeWatcher(this);
+        mHomeWatcher.setOnHomePressedListener(new HomeWatcher.OnHomePressedListener() {
+            @Override
+            public void onHomePressed() {
+                if (mServ != null) {
+                    mServ.pauseMusic();
+                }
+            }
+            @Override
+            public void onHomeLongPressed() {
+                if (mServ != null) {
+                    mServ.pauseMusic();
+                }
+            }
+        });
+        mHomeWatcher.startWatch();
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        doUnbindService();
+        Intent music = new Intent();
+        music.setClass(this, Music_Background.class);
+        stopService(music);
+    }
+
 
     //---------------------------------------------------------------------------------------------
     private Runnable sliderRunnable = new Runnable() {
@@ -184,12 +248,27 @@ public class Jeu extends AppCompatActivity {
     protected void onPause() { //gestion de la pause
         super.onPause();
         sliderHandler.removeCallbacks(sliderRunnable);
+        PowerManager pm = (PowerManager)
+                getSystemService(Context.POWER_SERVICE);
+        boolean isScreenOn = false;
+        if (pm != null) {
+            isScreenOn = pm.isScreenOn();
+        }
+
+        if (!isScreenOn) {
+            if (mServ != null) {
+                mServ.pauseMusic();
+            }
+        }
     }
 
     @Override
     protected void onResume() { //gestion de la reprise
         super.onResume();
         sliderHandler.postDelayed(sliderRunnable, 3000);
+        if (mServ != null) {
+            mServ.resumeMusic();
+        }
     }
 
 }
