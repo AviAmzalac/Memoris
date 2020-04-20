@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.os.PowerManager;
 import android.view.View;
+import android.widget.Switch;
 
 import androidx.appcompat.app.AppCompatActivity;
 

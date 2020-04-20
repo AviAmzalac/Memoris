@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Binder;
 import android.os.IBinder;
+import android.widget.Switch;
 import android.widget.Toast;
 
 public class Music_Background extends Service implements MediaPlayer.OnErrorListener {
@@ -12,6 +13,7 @@ public class Music_Background extends Service implements MediaPlayer.OnErrorList
     private final IBinder mBinder = new ServiceBinder();
     MediaPlayer mPlayer;
     private int length = 0;
+
 
     public Music_Background() {
     }
@@ -30,7 +32,6 @@ public class Music_Background extends Service implements MediaPlayer.OnErrorList
     @Override
     public void onCreate() {
         super.onCreate();
-
         mPlayer = MediaPlayer.create(this, R.raw.music);
         mPlayer.setOnErrorListener(this);
 
@@ -39,12 +40,10 @@ public class Music_Background extends Service implements MediaPlayer.OnErrorList
             mPlayer.setVolume(50, 50);
         }
 
-
         mPlayer.setOnErrorListener(new MediaPlayer.OnErrorListener() {
 
             public boolean onError(MediaPlayer mp, int what, int
                     extra) {
-
                 onError(mPlayer, what, extra);
                 return true;
             }

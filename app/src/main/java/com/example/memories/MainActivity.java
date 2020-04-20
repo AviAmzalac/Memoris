@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         music.setClass(this, Music_Background.class);
         startService(music);
 
+
         mHomeWatcher = new HomeWatcher(this);
         mHomeWatcher.setOnHomePressedListener(new HomeWatcher.OnHomePressedListener() {
             @Override
