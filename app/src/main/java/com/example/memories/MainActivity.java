@@ -7,15 +7,17 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.os.PowerManager;
 import android.view.View;
-import androidx.appcompat.app.AppCompatActivity;
+import android.widget.ImageButton;
 
-import java.nio.channels.SeekableByteChannel;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
     HomeWatcher mHomeWatcher;
     private boolean mIsBound = false;
     private Music_Background mServ;
+    private ImageButton SoundOn, SoundOff;
+
     private ServiceConnection Scon =new ServiceConnection(){
 
         public void onServiceConnected(ComponentName name, IBinder binder) {
@@ -45,12 +47,31 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        SoundOff = findViewById(R.id.imageButtonSoundOff);
+        SoundOn = findViewById(R.id.imageButtonSoundOn);
 
         //BIND MUSIC SERVICES
         doBindService();
-        Intent music = new Intent();
+        final Intent music = new Intent();
         music.setClass(this, Music_Background.class);
-        startService(music);
+
+        SoundOn.setOnClickListener(new View.OnClickListener() { //si soundOn est click
+            @Override
+            public void onClick(View v) {
+                startService(music);
+                SoundOn.setVisibility(View.INVISIBLE);
+                SoundOff.setVisibility(View.VISIBLE);
+            }});
+
+        SoundOff.setOnClickListener(new View.OnClickListener() { //si soundOff est click
+            @Override
+            public void onClick(View v) {
+                doUnbindService();
+                stopService(music);
+                SoundOn.setVisibility(View.VISIBLE);
+                SoundOff.setVisibility(View.INVISIBLE);
+            }});
+
 
         mHomeWatcher = new HomeWatcher(this);
         mHomeWatcher.setOnHomePressedListener(new HomeWatcher.OnHomePressedListener() {
@@ -109,8 +130,5 @@ public class MainActivity extends AppCompatActivity {
         Intent gameActivity = new Intent(MainActivity.this, Difficulty_page.class);
         startActivity(gameActivity);
     }
-    public void goto_setting(View view) {
-        Intent gameActivity = new Intent(MainActivity.this, Setting.class);
-        startActivity(gameActivity);
-    }
+
 }

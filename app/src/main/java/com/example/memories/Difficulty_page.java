@@ -27,10 +27,6 @@ public class Difficulty_page extends AppCompatActivity {
         }
     };
 
-    void doBindService(){
-        bindService(new Intent(this, Music_Background.class), Scon, Context.BIND_AUTO_CREATE);
-        mIsBound = true;
-    }
 
     void doUnbindService() {
         if(mIsBound) {
@@ -44,12 +40,6 @@ public class Difficulty_page extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.difficulty_page);
-
-        //BIND MUSIC SERVICES
-        doBindService();
-        Intent music = new Intent();
-        music.setClass(this, Music_Background.class);
-        startService(music);
 
         mHomeWatcher = new HomeWatcher(this);
         mHomeWatcher.setOnHomePressedListener(new HomeWatcher.OnHomePressedListener() {

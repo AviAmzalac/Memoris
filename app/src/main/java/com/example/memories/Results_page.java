@@ -7,7 +7,6 @@ import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.PowerManager;
-import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,11 +28,6 @@ public class Results_page extends AppCompatActivity {
         }
     };
 
-    void doBindService(){
-        bindService(new Intent(this, Music_Background.class), Scon, Context.BIND_AUTO_CREATE);
-        mIsBound = true;
-    }
-
     void doUnbindService() {
         if(mIsBound) {
             unbindService(Scon);
@@ -48,12 +42,6 @@ public class Results_page extends AppCompatActivity {
         setContentView(R.layout.results_page);
         TextView scoreLabel = (TextView) findViewById(R.id.scoreLabel);
         TextView highScoreLabel = (TextView) findViewById(R.id.highScoreLabel);
-
-        //BIND MUSIC SERVICES
-        doBindService();
-        Intent music = new Intent();
-        music.setClass(this, Music_Background.class);
-        startService(music);
 
         mHomeWatcher = new HomeWatcher(this);
         mHomeWatcher.setOnHomePressedListener(new HomeWatcher.OnHomePressedListener() {

@@ -9,7 +9,6 @@ import android.os.IBinder;
 import android.os.PowerManager;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 
@@ -33,10 +32,6 @@ public class Easy_User_Interface extends AppCompatActivity {
         }
     };
 
-    void doBindService(){
-        bindService(new Intent(this, Music_Background.class), Scon, Context.BIND_AUTO_CREATE);
-        mIsBound = true;
-    }
 
     void doUnbindService() {
         if(mIsBound) {
@@ -48,7 +43,7 @@ public class Easy_User_Interface extends AppCompatActivity {
 
     static ArrayList<Button> List_button = new ArrayList<>();
     static int score;
-    static int nb_error =0;
+    private int nb_error =0;
     static int right_answer = 0;
     private Button button_1;
     private Button button_2;
@@ -65,7 +60,6 @@ public class Easy_User_Interface extends AppCompatActivity {
     private Button button_10;
     private Button button_11;
     private Button button_12;
-    private ImageView game_over;
     private TextView error_text;
 
 
@@ -74,6 +68,7 @@ public class Easy_User_Interface extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.easy_user_interface);
+         error_text = findViewById(R.id.error_counter);
          button_1 = findViewById(R.id.button_1);
          button_2 = findViewById(R.id.button_2);
          button_3 = findViewById(R.id.button_3);
@@ -111,17 +106,16 @@ public class Easy_User_Interface extends AppCompatActivity {
 
 
         System.out.println("+++++++++++++++ LIST AFFICHE"+Jeu.List_affiche);
-        System.out.println("+++++++++++++++ LIST REP"+Jeu.list_rep);
+        System.out.println("+++++++++++++++ LIST REP"+Jeu.List_reponse);
+        Integer text1 = Jeu.List_affiche.get(0);
+        System.out.println(getResources().getString(text1));
+        afficher_list();
 
         for (int i = 0; i <= Jeu.List_affiche.size()-1; i++) {
             Integer text = Jeu.List_affiche.get(i);
             List_button.get(i).setText(getResources().getString(text));
+
         }
-        //BIND MUSIC SERVICES
-        doBindService();
-        Intent music = new Intent();
-        music.setClass(this, Music_Background.class);
-        startService(music);
 
         mHomeWatcher = new HomeWatcher(this);
         mHomeWatcher.setOnHomePressedListener(new HomeWatcher.OnHomePressedListener() {
@@ -139,6 +133,8 @@ public class Easy_User_Interface extends AppCompatActivity {
             }
         });
         mHomeWatcher.startWatch();
+
+
     }
 
     @Override
@@ -196,7 +192,7 @@ public class Easy_User_Interface extends AppCompatActivity {
     }
     //////////////////////////////
     public void push_button(View view){
-        if( nb_error < 2) {
+
             switch (view.getId()) {
                 case R.id.button_1:
                     button_1.setVisibility(View.INVISIBLE);
@@ -249,29 +245,57 @@ public class Easy_User_Interface extends AppCompatActivity {
                     button_12.setVisibility(View.INVISIBLE);
                     verification(view);
                     break;
+                default:
+                    break;
             }
-        }else {
 
-            goto_leaderboard();
-        }
     }
     public boolean verification(View view){
         int flag = 0;
         int i=0;
-        while(flag==0 && i < Jeu.list_rep.size()){
 
-            if(view.getId() == Jeu.list_rep.get(i)){
-                System.out.println( view.getId());
-                System.out.println( Jeu.list_rep.get(i));
+        Button b = (Button)view;
+        String buttonText = b.getText().toString();
+        System.out.println(" NOM DU TEXT DU BUTOTN : "+buttonText);
+
+        //        System.out.println(getResources().getString(text1));
+        while(flag==0 && i < Jeu.List_reponse.size()){
+            int text1 = Jeu.List_reponse.get(i);
+
+            if(buttonText.equals(getResources().getString(text1))){
+                System.out.println( getResources().getString(text1)+" OK");
                 flag = 1;
+
                 right_answer++;}
             else{
-                System.out.println( view.getId()+"-----");
-                System.out.println( Jeu.list_rep.get(i));}
-                  i++;
+
+                System.out.println( getResources().getString(text1)+" Faux");}
+                 i++;
+
+
            }
         if(flag ==1) {
+            System.out.println("Nombre d'erreur: "+nb_error+"/3");
             return true;
-        }else{ nb_error++; return false;}
+        }else{ nb_error++;
+            System.out.println("Nombre d'erreur: "+nb_error+"/3");
+            error_text.setText(nb_error+"");
+            if(nb_error >= 3){goto_leaderboard();}
+
+            return false;
+        }
+    }
+    public void afficher_list(){
+        for(int i = 0; i< Jeu.List_affiche.size();i++){
+            int text1 = Jeu.List_affiche.get(i);
+
+            System.out.print( getResources().getString(text1)+", ");
+        }
+        System.out.println("-");
+        for(int j = 0; j< Jeu.List_reponse.size();j++){
+            int text2 = Jeu.List_reponse.get(j);
+            System.out.print( getResources().getString(text2)+", ");
+        }
+        System.out.println("-");
     }
 }

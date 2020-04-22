@@ -29,11 +29,6 @@ public class Timer_page extends AppCompatActivity implements View.OnClickListene
         }
     };
 
-    void doBindService(){
-        bindService(new Intent(this, Music_Background.class), Scon, Context.BIND_AUTO_CREATE);
-        mIsBound = true;
-    }
-
     void doUnbindService() {
         if(mIsBound) {
             unbindService(Scon);
@@ -65,12 +60,6 @@ public class Timer_page extends AppCompatActivity implements View.OnClickListene
         btnrdy = findViewById(R.id.btnrdy);
         btnrdy.setOnClickListener(this);
         countdown = findViewById(R.id.countdown);
-
-        //BIND MUSIC SERVICES
-        doBindService();
-        Intent music = new Intent();
-        music.setClass(this, Music_Background.class);
-        startService(music);
 
         mHomeWatcher = new HomeWatcher(this);
         mHomeWatcher.setOnHomePressedListener(new HomeWatcher.OnHomePressedListener() {

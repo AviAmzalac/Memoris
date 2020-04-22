@@ -22,6 +22,7 @@ public class Jeu extends AppCompatActivity {
 
     static ArrayList<Integer> list_rep = new ArrayList<>();
     static ArrayList<Integer> List_affiche = new ArrayList<>();
+    static ArrayList<Integer> List_reponse = new ArrayList<>();
     HomeWatcher mHomeWatcher;
     private boolean mIsBound = false;
     private Music_Background mServ;
@@ -35,11 +36,6 @@ public class Jeu extends AppCompatActivity {
             mServ = null;
         }
     };
-
-    void doBindService(){
-        bindService(new Intent(this, Music_Background.class), Scon, Context.BIND_AUTO_CREATE);
-        mIsBound = true;
-    }
 
     void doUnbindService() {
         if(mIsBound) {
@@ -171,7 +167,7 @@ public class Jeu extends AppCompatActivity {
         }
 
         // LISTE DES REPONSES --------------------------------------------------------------------------------------------------
-        ArrayList<Integer> List_reponse = new ArrayList<>();
+
         int nb_reponse = 6;
         for(int i = 0; i< nb_reponse; i++){
             do{ x=(int)(Math.random()*(List_affiche.size()-1+1)+0);}
@@ -186,22 +182,18 @@ public class Jeu extends AppCompatActivity {
         }
 
 
+
         viewPager2.setAdapter(new SliderAdapter(sliderItems, viewPager2));
         viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
                 sliderHandler.removeCallbacks(sliderRunnable);
-                sliderHandler.postDelayed(sliderRunnable, 1500); //Durée pour chaque
+                sliderHandler.postDelayed(sliderRunnable, 1500); //Durée pour chaque 1500
             }
         });
 
         ////////////////////////////////
-        //BIND MUSIC SERVICES
-        doBindService();
-        Intent music = new Intent();
-        music.setClass(this, Music_Background.class);
-        startService(music);
 
         mHomeWatcher = new HomeWatcher(this);
         mHomeWatcher.setOnHomePressedListener(new HomeWatcher.OnHomePressedListener() {
