@@ -113,6 +113,7 @@ public class Jeu extends AppCompatActivity {
         List_mot.add(R.string.tiger);
         List_mot.add(R.string.watermelon);
         List_mot.add(R.string.whale);
+
         // CREATION LISTE DES IMAGES ( A COMPLETER A CHAQUE AJOUT D'IMAGE)
         ArrayList<Integer> List_Items = new ArrayList<>();
         List_Items.add(R.drawable.apple);
@@ -167,7 +168,6 @@ public class Jeu extends AppCompatActivity {
         }
 
         // LISTE DES REPONSES --------------------------------------------------------------------------------------------------
-
         int nb_reponse = 6;
         for(int i = 0; i< nb_reponse; i++){
             do{ x=(int)(Math.random()*(List_affiche.size()-1+1)+0);}
@@ -176,6 +176,7 @@ public class Jeu extends AppCompatActivity {
             list_rep.add(List_affiche_image.get(x));
         }
 
+        //CREATION DU SLIDER
         final List<SliderItem> sliderItems = new ArrayList<>();
         for (int i=0;i<nb_reponse;i++) {
             sliderItems.add(new SliderItem(list_rep.get(i)));
@@ -223,18 +224,17 @@ public class Jeu extends AppCompatActivity {
     }
 
 
-    //---------------------------------------------------------------------------------------------
     private Runnable sliderRunnable = new Runnable() {
         @Override
         public void run() {
             viewPager2.setCurrentItem(viewPager2.getCurrentItem() + 1);
-            if(viewPager2.getCurrentItem() == 5){
+            if(viewPager2.getCurrentItem() == list_rep.size()-1){
                 timer_to_next.start();
             }
+
         }
     };
 
-    //---------------------------------------------------------------------------------------------
 
     @Override
     protected void onPause() { //gestion de la pause

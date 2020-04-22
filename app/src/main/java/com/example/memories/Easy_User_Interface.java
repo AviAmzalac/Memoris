@@ -68,25 +68,22 @@ public class Easy_User_Interface extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.easy_user_interface);
-         error_text = findViewById(R.id.error_counter);
-         button_1 = findViewById(R.id.button_1);
-         button_2 = findViewById(R.id.button_2);
-         button_3 = findViewById(R.id.button_3);
+        error_text = findViewById(R.id.error_counter);
+        button_1 = findViewById(R.id.button_1);
+        button_2 = findViewById(R.id.button_2);
+        button_3 = findViewById(R.id.button_3);
 
-         button_4 = findViewById(R.id.button_4);
-         button_5 = findViewById(R.id.button_5);
-         button_6 = findViewById(R.id.button_6);
+        button_4 = findViewById(R.id.button_4);
+        button_5 = findViewById(R.id.button_5);
+        button_6 = findViewById(R.id.button_6);
 
-         button_7 = findViewById(R.id.button_7);
-         button_8 = findViewById(R.id.button_8);
-         button_9 = findViewById(R.id.button_9);
+        button_7 = findViewById(R.id.button_7);
+        button_8 = findViewById(R.id.button_8);
+        button_9 = findViewById(R.id.button_9);
 
-         button_10 = findViewById(R.id.button_10);
-         button_11 = findViewById(R.id.button_11);
-         button_12 = findViewById(R.id.button_12);
-
-       //  game_over = findViewById(R.id.game_over);
-
+        button_10 = findViewById(R.id.button_10);
+        button_11 = findViewById(R.id.button_11);
+        button_12 = findViewById(R.id.button_12);
 
         List_button.add(button_1);
         List_button.add(button_2);
