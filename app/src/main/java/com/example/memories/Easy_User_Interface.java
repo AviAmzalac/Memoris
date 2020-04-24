@@ -179,7 +179,8 @@ public class Easy_User_Interface extends AppCompatActivity {
 
     public void goto_leaderboard(){
         Intent intent = new Intent(Easy_User_Interface.this, Results_page.class);
-        intent.putExtra("SCORE", score);
+        intent.putExtra("Ranswer", right_answer);
+        intent.putExtra("Difficulty","Easy");
         startActivity(intent);
     }
 
@@ -262,9 +263,8 @@ public class Easy_User_Interface extends AppCompatActivity {
             if(buttonText.equals(getResources().getString(text1))){
                 System.out.println( getResources().getString(text1)+" OK");
                 flag = 1;
-
-                right_answer++;}
-            else{
+                right_answer++;
+            } else{
 
                 System.out.println( getResources().getString(text1)+" Faux");}
                  i++;

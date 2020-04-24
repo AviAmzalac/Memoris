@@ -18,6 +18,8 @@ public class Results_page extends AppCompatActivity {
     HomeWatcher mHomeWatcher;
     private boolean mIsBound = false;
     private Music_Background mServ;
+    private TextView scoreLabel;
+    private MyDbAdapter myDatabase;
     private ServiceConnection Scon =new ServiceConnection(){
 
         public void onServiceConnected(ComponentName name, IBinder binder) {
@@ -36,13 +38,26 @@ public class Results_page extends AppCompatActivity {
         }
     }
     //////////////////////////////////////////////////////////////////
-    private TextView scoreLabel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.results_page);
         TextView scoreLabel =  findViewById(R.id.scoreLabel);
-        scoreLabel.setText(Easy_User_Interface.right_answer+" ");
+
+        Intent intent = getIntent();
+        int scoreRecup = intent.getIntExtra("Ranswer",0);
+        String difficultyRecup = intent.getStringExtra("Difficulty");
+        scoreLabel.setText(scoreRecup+" ");
+/*        myDatabase = new MyDbAdapter(this);
+        System.out.println(("+++"));
+        myDatabase.open();
+        System.out.println(("---"));
+        myDatabase.insert_score(difficultyRecup, scoreRecup);
+        System.out.println(("***"));
+        myDatabase.close();
+        System.out.println(("xxx"));*/
+
+
 
         mHomeWatcher = new HomeWatcher(this);
         mHomeWatcher.setOnHomePressedListener(new HomeWatcher.OnHomePressedListener() {
