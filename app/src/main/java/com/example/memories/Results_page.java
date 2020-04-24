@@ -7,6 +7,7 @@ import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.PowerManager;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -35,13 +36,13 @@ public class Results_page extends AppCompatActivity {
         }
     }
     //////////////////////////////////////////////////////////////////
-
+    private TextView scoreLabel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.results_page);
-        TextView scoreLabel = (TextView) findViewById(R.id.scoreLabel);
-        TextView highScoreLabel = (TextView) findViewById(R.id.highScoreLabel);
+        TextView scoreLabel =  findViewById(R.id.scoreLabel);
+        scoreLabel.setText(Easy_User_Interface.right_answer+" ");
 
         mHomeWatcher = new HomeWatcher(this);
         mHomeWatcher.setOnHomePressedListener(new HomeWatcher.OnHomePressedListener() {

@@ -9,11 +9,11 @@
         android:gravity="center">
 
         <TextView
-            android:id="@+id/GAME_OVER"
+            android:id="@+id/scoreboard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="30sp"
-            android:text="GAME OVER" />
+            android:text="SCOREBOARD"
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/scoreLabel"
