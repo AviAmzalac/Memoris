@@ -4,159 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bubble">
-
-    <TextView
-        android:id="@+id/text_1"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="56dp"
-        android:onClick="push_button"
-        android:text="TextView"
-        android:visibility="visible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/text_2"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:onClick="push_button"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/text_1"
-        app:layout_constraintTop_toTopOf="@+id/text_1"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/text_3"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:onClick="push_button"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="@+id/text_1"
-        app:layout_constraintTop_toBottomOf="@+id/text_1" />
-
-    <TextView
-        android:id="@+id/text_4"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:onClick="push_button"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="@+id/text_2"
-        app:layout_constraintTop_toTopOf="@+id/text_3" />
-
-    <TextView
-        android:id="@+id/text_5"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:onClick="push_button"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="@+id/text_3"
-        app:layout_constraintTop_toBottomOf="@+id/text_3"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/text_6"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:onClick="push_button"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/text_4"
-        app:layout_constraintTop_toTopOf="@+id/text_5"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/text_7"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:onClick="push_button"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="@+id/text_5"
-        app:layout_constraintTop_toBottomOf="@+id/text_5"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/text_8"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:onClick="push_button"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="@+id/text_6"
-        app:layout_constraintTop_toTopOf="@+id/text_7"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/text_9"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:onClick="push_button"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="@+id/text_7"
-        app:layout_constraintTop_toBottomOf="@+id/text_7"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/text_10"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:onClick="push_button"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="@+id/text_8"
-        app:layout_constraintTop_toTopOf="@+id/text_9"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/text_11"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:onClick="push_button"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="@+id/text_9"
-        app:layout_constraintTop_toBottomOf="@+id/text_9"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/text_12"
-        android:layout_width="150dp"
-        android:layout_height="0dp"
-        android:onClick="push_button"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="@+id/text_10"
-        app:layout_constraintTop_toTopOf="@+id/text_11"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/max_count"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:layout_marginBottom="20dp"
-        android:onClick="push_button"
-        android:text="/3"
-        android:textSize="50sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
-
-    <TextView
-        android:id="@+id/error_counter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:text="0"
-        android:textSize="50sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/max_count" />
+    android:background="@drawable/jeu">
 
     <ImageButton
         android:id="@+id/imageButton3"
@@ -189,7 +37,183 @@
         app:srcCompat="@drawable/lightbulb" />
 
 
+    <TextView
+        android:id="@+id/text_1"
+        android:layout_width="111dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="130dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/cadre"
+        android:gravity="center"
+        android:onClick="push_button"
+        android:text="TextView"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/text_3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
+    <TextView
+        android:id="@+id/text_2"
+        android:layout_width="111dp"
+        android:layout_height="57dp"
+        android:background="@drawable/cadre"
+        android:gravity="center"
+        android:onClick="push_button"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/text_1"
+        app:layout_constraintTop_toTopOf="@+id/text_1"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/text_3"
+        android:layout_width="111dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/cadre"
+        android:gravity="center"
+        android:onClick="push_button"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/text_1"
+        app:layout_constraintTop_toBottomOf="@+id/text_1" />
+
+    <TextView
+        android:id="@+id/text_4"
+        android:layout_width="111dp"
+        android:layout_height="57dp"
+        android:background="@drawable/cadre"
+        android:gravity="center"
+        android:onClick="push_button"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/text_2"
+        app:layout_constraintTop_toTopOf="@+id/text_3" />
+
+    <TextView
+        android:id="@+id/text_5"
+        android:layout_width="111dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/cadre"
+        android:gravity="center"
+        android:onClick="push_button"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/text_3"
+        app:layout_constraintTop_toBottomOf="@+id/text_3"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/text_6"
+        android:layout_width="111dp"
+        android:layout_height="57dp"
+        android:background="@drawable/cadre"
+        android:gravity="center"
+        android:onClick="push_button"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/text_4"
+        app:layout_constraintTop_toTopOf="@+id/text_5"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/text_7"
+        android:layout_width="111dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/cadre"
+        android:gravity="center"
+        android:onClick="push_button"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/text_5"
+        app:layout_constraintTop_toBottomOf="@+id/text_5"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/text_8"
+        android:layout_width="111dp"
+        android:layout_height="57dp"
+        android:background="@drawable/cadre"
+        android:gravity="center"
+        android:onClick="push_button"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/text_6"
+        app:layout_constraintTop_toTopOf="@+id/text_7"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/text_9"
+        android:layout_width="111dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/cadre"
+        android:gravity="center"
+        android:onClick="push_button"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/text_7"
+        app:layout_constraintTop_toBottomOf="@+id/text_7"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/text_10"
+        android:layout_width="111dp"
+        android:layout_height="57dp"
+        android:background="@drawable/cadre"
+        android:gravity="center"
+        android:onClick="push_button"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/text_8"
+        app:layout_constraintTop_toTopOf="@+id/text_9"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/text_11"
+        android:layout_width="111dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/cadre"
+        android:gravity="center"
+        android:onClick="push_button"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/text_9"
+        app:layout_constraintTop_toBottomOf="@+id/text_9"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/text_12"
+        android:layout_width="111dp"
+        android:layout_height="57dp"
+        android:background="@drawable/cadre"
+        android:gravity="center"
+        android:onClick="push_button"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/text_10"
+        app:layout_constraintTop_toTopOf="@+id/text_11"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/max_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginBottom="20dp"
+        android:onClick="push_button"
+        android:text="/3"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/error_counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="0"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/max_count" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

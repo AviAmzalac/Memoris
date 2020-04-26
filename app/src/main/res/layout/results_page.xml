@@ -1,41 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_height="match_parent"
-        android:layout_width="match_parent"
-        android:background="@color/white"
-        android:orientation="vertical"
-        android:gravity="center">
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/resultat"
+    android:gravity="center"
+    android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/scoreboard"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="SCOREBOARD"
-            android:textSize="30sp" />
+    <Button
+        android:id="@+id/tryAgain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:onClick="goto_difficulty_page"
+        android:text="Try Again"
+        android:textAllCaps="false" />
 
-        <TextView
-            android:id="@+id/scoreLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="40sp"
-            android:text="150"
-            android:layout_marginTop="80dp" />
+    <TextView
+        android:id="@+id/scoreLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="150"
+        android:textSize="40sp" />
 
-        <TextView
-            android:id="@+id/highScoreLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:text="Highscore: 300"
-            android:layout_marginTop="80dp" />
+    <TextView
+        android:id="@+id/highScoreLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="Highscore: 300"
+        android:textSize="20sp" />
 
-        <Button
-            android:id="@+id/tryAgain"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:text="Try Again"
-            android:textAllCaps="false" />
+    <TextView
+        android:id="@+id/scoreboard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SCOREBOARD"
+        android:textSize="30sp" />
 </androidx.appcompat.widget.LinearLayoutCompat>

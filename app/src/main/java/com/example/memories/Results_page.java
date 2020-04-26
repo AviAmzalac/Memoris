@@ -76,6 +76,10 @@ public class Results_page extends AppCompatActivity {
         });
         mHomeWatcher.startWatch();
     }
+    public void goto_difficulty_page(View view) {
+        Intent gameActivity = new Intent(Results_page.this, Difficulty_page.class);
+        startActivity(gameActivity);
+    }
 
     @Override
     protected void onResume() {
