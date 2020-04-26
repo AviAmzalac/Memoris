@@ -36,22 +36,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Titre" />
 
-
-    <Button
-        android:id="@+id/Setting"
-        android:layout_width="250dp"
-        android:layout_height="64dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/grey_round_button"
-        android:onClick="goto_setting"
-        android:text="@string/settings"
-        android:textSize="36sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/NewGame" />
-
     <Button
         android:id="@+id/Credit"
         android:layout_width="250dp"
@@ -62,10 +46,39 @@
         android:text="@string/Credit"
         android:textSize="36sp"
         android:background="@drawable/grey_round_button"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Setting" />
+        app:layout_constraintTop_toBottomOf="@+id/NewGame" />
+
+    <Button
+        android:id="@+id/Leaderboard"
+        android:layout_width="250dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:onClick="goto_leaderboard"
+        android:text="@string/button_leaderboard"
+        android:textSize="36sp"
+        android:background="@drawable/grey_round_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Credit" />
+
+    <Button
+        android:id="@+id/Erase_Data"
+        android:layout_width="250dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:onClick="erase_data"
+        android:text="@string/button_erase"
+        android:textSize="36sp"
+        android:background="@drawable/grey_round_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Leaderboard" />
 
 
     <ImageButton
@@ -78,7 +91,7 @@
         android:maxHeight="100dp"
         android:scaleType="fitCenter"
         android:layout_marginTop="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginEnd="20dp"
         android:visibility="invisible"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -95,7 +108,7 @@
         android:maxHeight="100dp"
         android:scaleType="fitCenter"
         android:layout_marginTop="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginEnd="20dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:srcCompat="@drawable/sound_off"

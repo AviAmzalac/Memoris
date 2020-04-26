@@ -15,12 +15,11 @@ public class MyDbAdapter {
 
     private static final String leaderboard_table = "leaderboard";
     public static final String col_ID = "id";
-    public static final String col_essai = "Essai";
     public static final String col_difficiculty = "Difficulte";
     public static final String col_nb_rep = "NBRanswers";
 
     private static final String create_leaderboard =
-            String.format("create table %s(%s integer primary key autoincrement, %s integer autoincrement not null, %s text not null, %s integer not null);", leaderboard_table, col_ID, col_essai, col_difficiculty, col_nb_rep);
+            String.format("create table %s(%s integer primary key autoincrement, %s text not null, %s integer not null);", leaderboard_table, col_ID, col_difficiculty, col_nb_rep);
 
     private SQLiteDatabase myDataBase;
     private MyOpenHelper myOpenHelper;
@@ -39,11 +38,11 @@ public class MyDbAdapter {
 
     public ArrayList<Score> getAllScore() {
         ArrayList<Score> scores = new ArrayList<Score>();
-        Cursor c = myDataBase.query(leaderboard_table, new String[]{col_ID, col_essai, col_difficiculty, col_nb_rep},
+        Cursor c = myDataBase.query(leaderboard_table, new String[]{col_ID, col_difficiculty, col_nb_rep},
                 null, null, null, null, null);
         c.moveToFirst();
         while (!c.isAfterLast()) {
-            scores.add(new Score(c.getInt(0), c.getInt(1), c.getString(2), c.getInt(3)));
+            scores.add(new Score(c.getInt(0),c.getString(1), c.getInt(2)));
             c.moveToNext();
         }
         c.close();
@@ -57,6 +56,21 @@ public class MyDbAdapter {
         return myDataBase.insert(leaderboard_table, null, values);
     }
 
+    public void deleteTable() {
+        myDataBase.execSQL(String.format("drop table %s ;", leaderboard_table));
+        myOpenHelper.onCreate(myDataBase);
+    }
+
+    public int countEvent(){
+        int count=0;
+        Cursor c = myDataBase.query(leaderboard_table, new String[]{col_ID, col_difficiculty, col_nb_rep},
+                null, null, null, null, null);
+        c.moveToFirst();
+        count=c.getCount();
+        c.close();
+        return count;
+    }
+
     private class MyOpenHelper extends SQLiteOpenHelper {
         public MyOpenHelper(Context context, String name, SQLiteDatabase.CursorFactory cursorFactory, int version) {
             super(context, name, cursorFactory, version);
@@ -65,13 +79,14 @@ public class MyDbAdapter {
         @Override
         public void onCreate(SQLiteDatabase db) {
             db.execSQL(create_leaderboard);
-            Log.i("test", "Test de création");
+            Log.i("test", "La table à été (re)crée");
         }
 
         @Override
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-            db.execSQL(String.format("drop table %s ;", create_leaderboard));
+            db.execSQL(String.format("drop table %s ;", leaderboard_table));
             onCreate(db);
         }
+
     }
 }

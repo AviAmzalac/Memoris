@@ -9,7 +9,6 @@ import android.os.IBinder;
 import android.os.PowerManager;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.TextView;
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -180,16 +179,13 @@ public class Easy_User_Interface extends AppCompatActivity {
         startActivity(gameActivity);
     }
 
-    public void goto_leaderboard(){
+    public void goto_resultspage(){
         Intent intent = new Intent(Easy_User_Interface.this, Results_page.class);
-        intent.putExtra("SCORE", score);
+        intent.putExtra("Ranswer", right_answer);
+        intent.putExtra("Difficulty", "Easy");
         startActivity(intent);
     }
 
-    //////////////////////////////
-    public void addFakeScore(View view) {
-        score+=1;
-    }
     //////////////////////////////
     public void push_button(View view){
 
@@ -277,16 +273,18 @@ public class Easy_User_Interface extends AppCompatActivity {
            }
         if(flag ==1) {
             System.out.println("Nombre d'erreur: "+nb_error+"/3");
-            if(right_answer == 6) goto_leaderboard();
+            if(right_answer == 6) goto_resultspage();
             return true;
         }else{ nb_error++;
             System.out.println("Nombre d'erreur: "+nb_error+"/3");
             error_text.setText(nb_error+"");
-            if(nb_error >= 3){goto_leaderboard();}
+            if(nb_error >= 3){
+                goto_resultspage();}
 
             return false;
         }
     }
+
     public void afficher_list(){
         for(int i = 0; i< com.example.memories.Jeu.List_affiche.size(); i++){
             int text1 = com.example.memories.Jeu.List_affiche.get(i);

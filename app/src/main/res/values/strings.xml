@@ -5,6 +5,10 @@
     <string name="Credit">Credit</string>
     <string name="button_back">Back</string>
     <string name="button_ready">READY</string>
+    <string name="button_erase">Erase Datas</string>
+    <string name="button_leaderboard">Leaderboard</string>
+
+
 
     <!-- New game -->
     <string name="button_easy">EASY</string>
@@ -12,10 +16,6 @@
     <string name="button_hard">HARD</string>
     <string name="button_competitive">NIGHTMARE </string>
 
-    <!-- Settings -->
-    <string name="musiqueLabel">Musique : </string>
-    <string name="button_night">Night Mode "  "</string>
-    <string name="button_reset">Reset Data</string>
     <string name="soundicon">SoundIcon</string>
 
     <!-- Jeu -->

@@ -1,4 +1,5 @@
 package com.example.memories;
+
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -8,8 +9,11 @@ import android.os.IBinder;
 import android.os.PowerManager;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,11 +21,12 @@ public class MainActivity extends AppCompatActivity {
     private boolean mIsBound = false;
     private Music_Background mServ;
     private ImageButton SoundOn, SoundOff;
+    private MyDbAdapter myDatabase;
 
-    private ServiceConnection Scon =new ServiceConnection(){
+    private ServiceConnection Scon = new ServiceConnection() {
 
         public void onServiceConnected(ComponentName name, IBinder binder) {
-            mServ = ((Music_Background.ServiceBinder)binder).getService();
+            mServ = ((Music_Background.ServiceBinder) binder).getService();
         }
 
         public void onServiceDisconnected(ComponentName name) {
@@ -29,13 +34,13 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
-    void doBindService(){
+    void doBindService() {
         bindService(new Intent(this, Music_Background.class), Scon, Context.BIND_AUTO_CREATE);
         mIsBound = true;
     }
 
     void doUnbindService() {
-        if(mIsBound) {
+        if (mIsBound) {
             unbindService(Scon);
             mIsBound = false;
         }
@@ -49,6 +54,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         SoundOff = findViewById(R.id.imageButtonSoundOff);
         SoundOn = findViewById(R.id.imageButtonSoundOn);
+        myDatabase = new MyDbAdapter(this);
+        myDatabase.open();
+        ArrayList<Score> mes_scores = myDatabase.getAllScore();
+        for(int i=0;i<mes_scores.size();i++){
+            System.out.println(mes_scores.get(i).getNb_answers());
+            System.out.println(mes_scores.get(i).getDifficulty());
+            System.out.println(mes_scores.get(i).getId());
+        }
 
         //BIND MUSIC SERVICES
         doBindService();
@@ -61,7 +74,8 @@ public class MainActivity extends AppCompatActivity {
                 startService(music);
                 SoundOn.setVisibility(View.INVISIBLE);
                 SoundOff.setVisibility(View.VISIBLE);
-            }});
+            }
+        });
 
         SoundOff.setOnClickListener(new View.OnClickListener() { //si soundOff est click
             @Override
@@ -70,7 +84,8 @@ public class MainActivity extends AppCompatActivity {
                 stopService(music);
                 SoundOn.setVisibility(View.VISIBLE);
                 SoundOff.setVisibility(View.INVISIBLE);
-            }});
+            }
+        });
 
 
         mHomeWatcher = new HomeWatcher(this);
@@ -81,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
                     mServ.pauseMusic();
                 }
             }
+
             @Override
             public void onHomeLongPressed() {
                 if (mServ != null) {
@@ -106,6 +122,8 @@ public class MainActivity extends AppCompatActivity {
         Intent music = new Intent();
         music.setClass(this, Music_Background.class);
         stopService(music);
+        myDatabase.close();
+
     }
 
     @Override
@@ -131,4 +149,16 @@ public class MainActivity extends AppCompatActivity {
         startActivity(gameActivity);
     }
 
+    public void goto_leaderboard(View view) {
+        Intent gameActivity = new Intent(MainActivity.this, Leaderboard.class);
+        startActivity(gameActivity);
+    }
+
+    public void erase_data(View view) {
+        if(myDatabase.countEvent()>0){
+            myDatabase.deleteTable();
+        } else {
+            Toast.makeText(MainActivity.this, "Le leaderboard est déjà vide", Toast.LENGTH_SHORT).show();
+        }
+    }
 }

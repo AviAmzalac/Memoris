@@ -7,23 +7,22 @@ import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.PowerManager;
-import android.view.View;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Results_page extends AppCompatActivity {
+import java.util.ArrayList;
+
+public class Leaderboard extends AppCompatActivity {
 
     //GESTION MUSIC
     HomeWatcher mHomeWatcher;
     private boolean mIsBound = false;
     private Music_Background mServ;
-    private TextView scoreLabel;
     private MyDbAdapter myDatabase;
-    private ServiceConnection Scon =new ServiceConnection(){
+    private ServiceConnection Scon = new ServiceConnection() {
 
         public void onServiceConnected(ComponentName name, IBinder binder) {
-            mServ = ((Music_Background.ServiceBinder)binder).getService();
+            mServ = ((Music_Background.ServiceBinder) binder).getService();
         }
 
         public void onServiceDisconnected(ComponentName name) {
@@ -32,27 +31,17 @@ public class Results_page extends AppCompatActivity {
     };
 
     void doUnbindService() {
-        if(mIsBound) {
+        if (mIsBound) {
             unbindService(Scon);
             mIsBound = false;
         }
     }
+
     //////////////////////////////////////////////////////////////////
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.results_page);
-        TextView scoreLabel =  findViewById(R.id.scoreLabel);
-
-        Intent intent = getIntent();
-        int scoreRecup = intent.getIntExtra("Ranswer",0);
-        String difficultyRecup = intent.getStringExtra("Difficulty");
-        scoreLabel.setText(scoreRecup+" ");
-        myDatabase = new MyDbAdapter(this);
-        myDatabase.open();
-        myDatabase.insert_score(difficultyRecup, scoreRecup);
-        myDatabase.close();
-
+        setContentView(R.layout.leaderboard);
 
 
 
@@ -64,6 +53,7 @@ public class Results_page extends AppCompatActivity {
                     mServ.pauseMusic();
                 }
             }
+
             @Override
             public void onHomeLongPressed() {
                 if (mServ != null) {
@@ -72,10 +62,6 @@ public class Results_page extends AppCompatActivity {
             }
         });
         mHomeWatcher.startWatch();
-    }
-    public void goto_difficulty_page(View view) {
-        Intent gameActivity = new Intent(Results_page.this, Difficulty_page.class);
-        startActivity(gameActivity);
     }
 
     @Override
