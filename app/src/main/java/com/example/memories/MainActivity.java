@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         myDatabase = new MyDbAdapter(this);
         myDatabase.open();
         ArrayList<Score> mes_scores = myDatabase.getAllScore();
-        for(int i=0;i<mes_scores.size();i++){
+        for (int i = 0; i < mes_scores.size(); i++) {
             System.out.println(mes_scores.get(i).getNb_answers());
             System.out.println(mes_scores.get(i).getDifficulty());
             System.out.println(mes_scores.get(i).getId());
@@ -123,7 +123,6 @@ public class MainActivity extends AppCompatActivity {
         music.setClass(this, Music_Background.class);
         stopService(music);
         myDatabase.close();
-
     }
 
     @Override
@@ -155,10 +154,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void erase_data(View view) {
-        if(myDatabase.countEvent()>0){
+        myDatabase.insert_score("NIGHTMARE", 2);
+        if (myDatabase.countEvent() > 0) {
             myDatabase.deleteTable();
         } else {
             Toast.makeText(MainActivity.this, "Le leaderboard est déjà vide", Toast.LENGTH_SHORT).show();
         }
+
+
     }
 }

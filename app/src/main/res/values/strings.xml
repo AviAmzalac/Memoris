@@ -1,4 +1,6 @@
 <resources>
+    <!-- Main Activity -->
+
     <string name="app_name">Memories</string>
     <string name="new_game">New Game</string>
     <string name="settings">Settings</string>
@@ -7,6 +9,14 @@
     <string name="button_ready">READY</string>
     <string name="button_erase">Erase Datas</string>
     <string name="button_leaderboard">Leaderboard</string>
+    <string name="soundicon">SoundIcon</string>
+
+    <!-- Leaderboard -->
+    <string name="leaderboard_title">LEADERBOARD</string>
+    <string name="perfect_label">PERFECT</string>
+    <string name="essai_label">Essai</string>
+    <string name="difficulty_label">Difficulté</string>
+    <string name="nb_rep_label">Réponses</string>
 
 
 
@@ -15,8 +25,6 @@
     <string name="button_medium">MEDIUM</string>
     <string name="button_hard">HARD</string>
     <string name="button_competitive">NIGHTMARE </string>
-
-    <string name="soundicon">SoundIcon</string>
 
     <!-- Jeu -->
     <string name="apple">apple</string>
@@ -58,5 +66,11 @@
     <string name="tiger">tiger</string>
     <string name="watermelon">watermelon</string>
     <string name="whale">whale</string>
+
+    <!-- Resultat -->
+    <string name="resultat_titre">RESULTAT</string>
+    <string name="tryagain">Try Again ?</string>
+
+
 
 </resources>

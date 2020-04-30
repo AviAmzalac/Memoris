@@ -1,71 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/timer">
+    android:background="@drawable/timer"
+    tools:ignore="ExtraText">
 
-    <Button
-        android:id="@+id/button_easy"
-        android:layout_width="279dp"
-        android:layout_height="110dp"
-        android:layout_marginTop="100dp"
-        android:background="@drawable/white_round_button"
-        android:onClick="goto_timer_page"
-        android:text="@string/button_easy"
-        android:textSize="36sp"
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_green"
+        android:gravity="center"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:text="@string/leaderboard_title"
+        android:textAlignment="center"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button_medium"
-        android:layout_width="279dp"
-        android:layout_height="110dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/white_round_button"
-        android:text="@string/button_medium"
 
-        android:textSize="36sp"
+    <TextView
+        android:id="@+id/essai_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="@string/essai_label"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_marginStart="70dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+    <TextView
+        android:id="@+id/difficulty_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/difficulty_label"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:textStyle="bold"
+
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button_easy" />
+        app:layout_constraintTop_toBottomOf="@id/title" />
 
-    <Button
-        android:id="@+id/button_hard"
-        android:layout_width="279dp"
-        android:layout_height="110dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/white_round_button"
-        android:text="@string/button_hard"
-        android:textSize="36sp"
-        app:layout_constraintLeft_toLeftOf="parent"
+    <TextView
+        android:id="@+id/nb_rep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nb_rep_label"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_marginEnd="40dp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button_medium" />
+        app:layout_constraintTop_toBottomOf="@id/title" />
 
 
-    <Button
-        android:id="@+id/button_neightmare"
-        android:layout_width="279dp"
-        android:layout_height="110dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/white_round_button"
-        android:text="@string/button_competitive"
-        android:textSize="36sp"
+    <ListView
+        android:id="@+id/leaderboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button_hard" />
+        app:layout_constraintTop_toBottomOf="@id/essai_label" />
 
     <ImageButton
         android:id="@+id/imageButton3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginBottom="20dp"
         android:background="@android:color/transparent"
         android:onClick="goto_main"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/title"
+        app:layout_constraintLeft_toLeftOf="@id/title"
+        app:layout_constraintTop_toTopOf="@id/title"
         app:srcCompat="@drawable/back_arrow" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

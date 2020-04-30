@@ -113,4 +113,9 @@ public class Results_page extends AppCompatActivity {
             }
         }
     }
+
+    public void goto_main(View view){
+        Intent gameActivity = new Intent(Results_page.this, MainActivity.class);
+        startActivity(gameActivity);
+    }
 }
