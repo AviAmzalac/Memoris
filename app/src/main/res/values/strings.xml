@@ -1,7 +1,7 @@
 <resources>
     <!-- Main Activity -->
 
-    <string name="app_name">Memories</string>
+    <string name="app_name">Memoris</string>
     <string name="new_game">New Game</string>
     <string name="settings">Settings</string>
     <string name="Credit">Credit</string>
@@ -14,9 +14,9 @@
     <!-- Leaderboard -->
     <string name="leaderboard_title">LEADERBOARD</string>
     <string name="perfect_label">PERFECT</string>
-    <string name="essai_label">Essai</string>
-    <string name="difficulty_label">Difficulté</string>
-    <string name="nb_rep_label">Réponses</string>
+    <string name="essai_label">Try</string>
+    <string name="difficulty_label">Difficulty</string>
+    <string name="nb_rep_label">Answers</string>
 
 
 
@@ -68,7 +68,7 @@
     <string name="whale">whale</string>
 
     <!-- Resultat -->
-    <string name="resultat_titre">RESULTAT</string>
+    <string name="resultat_titre">RESULTS</string>
     <string name="tryagain">Try Again ?</string>
 
 
