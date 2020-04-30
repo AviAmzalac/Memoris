@@ -1,12 +1,13 @@
-package com.example.memories;
+package com.example.memoris;
 
 import android.app.Service;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Binder;
 import android.os.IBinder;
-import android.widget.Switch;
 import android.widget.Toast;
+
+import com.example.memories.R;
 
 public class Music_Background extends Service implements MediaPlayer.OnErrorListener {
 

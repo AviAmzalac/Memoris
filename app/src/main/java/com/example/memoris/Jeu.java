@@ -1,4 +1,4 @@
-package com.example.memories;
+package com.example.memoris;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -11,6 +11,8 @@ import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.PowerManager;
+
+import com.example.memories.R;
 
 import java.util.ArrayList;
 import java.util.List;

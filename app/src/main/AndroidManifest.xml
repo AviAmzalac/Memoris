@@ -12,7 +12,7 @@
         android:largeHeap="true">
 
 
-        <activity android:name=".MainActivity">
+        <activity android:name="com.example.memoris.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,59 +21,59 @@
         </activity>
 
 
-        <activity android:name=".Jeu"
+        <activity android:name="com.example.memoris.Jeu"
             android:label="jeu"
-            android:parentActivityName="MainActivity">
+            android:parentActivityName="com.example.memoris.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
+                android:value="com.example.memoris.MainActivity"/>
         </activity>
 
 
-        <activity android:name=".Difficulty_page"
+        <activity android:name="com.example.memoris.Difficulty_page"
             android:label="difficulty_page"
-            android:parentActivityName="MainActivity">
+            android:parentActivityName="com.example.memoris.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
+                android:value="com.example.memoris.MainActivity"/>
         </activity>
 
 
-        <activity android:name=".Timer_page"
+        <activity android:name="com.example.memoris.Timer_page"
             android:label="timer_page"
-            android:parentActivityName=".Difficulty_page">
+            android:parentActivityName="com.example.memoris.Difficulty_page">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Difficulty_page"/>
+                android:value="com.example.memoris.Difficulty_page"/>
         </activity>
 
-        <activity android:name=".Leaderboard"
+        <activity android:name="com.example.memoris.Leaderboard"
             android:label="Leaderboard"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName="com.example.memoris.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
+                android:value="com.example.memoris.MainActivity"/>
         </activity>
 
-        <activity android:name=".Easy_User_Interface"
+        <activity android:name="com.example.memoris.Easy_User_Interface"
             android:label="Reponse_easy"
-            android:parentActivityName=".Timer_page">
+            android:parentActivityName="com.example.memoris.Timer_page">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
+                android:value="com.example.memoris.MainActivity"/>
         </activity>
 
-        <activity android:name=".Results_page"
+        <activity android:name="com.example.memoris.Results_page"
             android:label="Results_page"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName="com.example.memoris.MainActivity">
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
+                android:value="com.example.memoris.MainActivity"/>
         </activity>
 
         <service
-            android:name=".Music_Background"
+            android:name="com.example.memoris.Music_Background"
             android:enabled="true" />
 
     </application>

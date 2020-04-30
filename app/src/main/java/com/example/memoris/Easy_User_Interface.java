@@ -1,4 +1,4 @@
-package com.example.memories;
+package com.example.memoris;
 
 import android.content.ComponentName;
 import android.content.Context;
@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.memories.R;
 
 import java.util.ArrayList;
 
@@ -102,14 +104,14 @@ public class Easy_User_Interface extends AppCompatActivity {
         List_button.add(text_12);
 
 
-        System.out.println("+++++++++++++++ LIST AFFICHE"+ com.example.memories.Jeu.List_affiche);
-        System.out.println("+++++++++++++++ LIST REP"+ com.example.memories.Jeu.List_reponse);
-        Integer text1 = com.example.memories.Jeu.List_affiche.get(0);
+        System.out.println("+++++++++++++++ LIST AFFICHE"+ Jeu.List_affiche);
+        System.out.println("+++++++++++++++ LIST REP"+ Jeu.List_reponse);
+        Integer text1 = Jeu.List_affiche.get(0);
         System.out.println(getResources().getString(text1));
         afficher_list();
 
-        for (int i = 0; i <= com.example.memories.Jeu.List_affiche.size()-1; i++) {
-            Integer text = com.example.memories.Jeu.List_affiche.get(i);
+        for (int i = 0; i <= Jeu.List_affiche.size()-1; i++) {
+            Integer text = Jeu.List_affiche.get(i);
             List_button.get(i).setText(getResources().getString(text));
 
         }
@@ -255,9 +257,9 @@ public class Easy_User_Interface extends AppCompatActivity {
         System.out.println(" NOM DU TEXT DU BUTOTN : "+buttonText);
 
         //        System.out.println(getResources().getString(text1));
-        while(flag==0 && i < com.example.memories.Jeu.List_reponse.size()){
+        while(flag==0 && i < Jeu.List_reponse.size()){
 
-            int text1 = com.example.memories.Jeu.List_reponse.get(i);
+            int text1 = Jeu.List_reponse.get(i);
 
             if(buttonText.equals(getResources().getString(text1))){
                 System.out.println( getResources().getString(text1)+" OK");
@@ -286,14 +288,14 @@ public class Easy_User_Interface extends AppCompatActivity {
     }
 
     public void afficher_list(){
-        for(int i = 0; i< com.example.memories.Jeu.List_affiche.size(); i++){
-            int text1 = com.example.memories.Jeu.List_affiche.get(i);
+        for(int i = 0; i< Jeu.List_affiche.size(); i++){
+            int text1 = Jeu.List_affiche.get(i);
 
             System.out.print( getResources().getString(text1)+", ");
         }
         System.out.println("-");
-        for(int j = 0; j< com.example.memories.Jeu.List_reponse.size(); j++){
-            int text2 = com.example.memories.Jeu.List_reponse.get(j);
+        for(int j = 0; j< Jeu.List_reponse.size(); j++){
+            int text2 = Jeu.List_reponse.get(j);
             System.out.print( getResources().getString(text2)+", ");
         }
         System.out.println("-");

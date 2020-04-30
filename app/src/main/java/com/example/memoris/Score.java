@@ -1,4 +1,4 @@
-package com.example.memories;
+package com.example.memoris;
 
 public class Score {
     private int id;

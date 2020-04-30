@@ -1,4 +1,4 @@
-package com.example.memories;
+package com.example.memoris;
 
 import android.content.ComponentName;
 import android.content.Context;
@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.memories.R;
 
 public class Results_page extends AppCompatActivity {
 

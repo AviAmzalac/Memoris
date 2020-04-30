@@ -1,4 +1,4 @@
-package com.example.memories;
+package com.example.memoris;
 
 import android.content.ContentValues;
 import android.content.Context;

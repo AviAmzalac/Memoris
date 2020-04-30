@@ -1,4 +1,4 @@
-package com.example.memories;
+package com.example.memoris;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
