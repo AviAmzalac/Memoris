@@ -35,4 +35,5 @@ public class Score {
     public void setNb_answers(int nb_answers) {
         this.nb_answers = nb_answers;
     }
+
 }

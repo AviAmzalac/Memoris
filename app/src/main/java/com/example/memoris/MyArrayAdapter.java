@@ -33,13 +33,13 @@ public class MyArrayAdapter extends ArrayAdapter<Score> {
         essai_champ.setText(Integer.toString(score.getId()));
         difficulty_champ.setText(score.getDifficulty());
         //A voir si possibilité de recuperer les difficulté par le fichier string dans les conditions car String!=Int
-        if (difficulty_champ.getText() == "EASY" && score.getNb_answers() == 6) {
+        if (difficulty_champ.getText() == "EASY" && score.getNb_answers() == 5) {
             nbrep_champ.setText(R.string.perfect_label);
-        } else if (difficulty_champ.getText() == "MEDIUM" && score.getNb_answers() == 7) {
+        } else if (difficulty_champ.getText() == "MEDIUM" && score.getNb_answers() == 6) {
             nbrep_champ.setText(R.string.perfect_label);
-        } else if (difficulty_champ.getText() == "HARD" && score.getNb_answers() == 8) {
+        } else if (difficulty_champ.getText() == "HARD" && score.getNb_answers() == 7) {
             nbrep_champ.setText(R.string.perfect_label);
-        } else if (difficulty_champ.getText() == "NIGHTMARE" && score.getNb_answers() == 9) {
+        } else if (difficulty_champ.getText() == "NIGHTMARE" && score.getNb_answers() == 8) {
             nbrep_champ.setText(R.string.perfect_label);
         } else {
             nbrep_champ.setText(Integer.toString(score.getNb_answers()));

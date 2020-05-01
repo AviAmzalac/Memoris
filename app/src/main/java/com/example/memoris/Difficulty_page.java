@@ -105,5 +105,8 @@ public class Difficulty_page extends AppCompatActivity {
         Intent gameActivity = new Intent(Difficulty_page.this, Timer_page.class);
         startActivity(gameActivity);
     }
-
+    public void onBackPressed() {
+        Intent gameActivity = new Intent(Difficulty_page.this, MainActivity.class);
+        startActivity(gameActivity);
+    }
 }

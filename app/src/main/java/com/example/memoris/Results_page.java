@@ -120,4 +120,8 @@ public class Results_page extends AppCompatActivity {
         Intent gameActivity = new Intent(Results_page.this, MainActivity.class);
         startActivity(gameActivity);
     }
+    public void onBackPressed() {
+        Intent gameActivity = new Intent(Results_page.this, MainActivity.class);
+        startActivity(gameActivity);
+    }
 }

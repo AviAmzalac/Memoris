@@ -300,5 +300,9 @@ public class Easy_User_Interface extends AppCompatActivity {
         }
         System.out.println("-");
     }
+    public void onBackPressed() {
+        Intent gameActivity = new Intent(Easy_User_Interface.this, MainActivity.class);
+        startActivity(gameActivity);
+    }
 
 }

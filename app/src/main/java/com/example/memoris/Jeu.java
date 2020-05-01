@@ -264,5 +264,8 @@ public class Jeu extends AppCompatActivity {
             mServ.resumeMusic();
         }
     }
+    public void onBackPressed() {
+        // do nothing.
+    }
 
 }

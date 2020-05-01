@@ -120,4 +120,5 @@ public class Leaderboard extends AppCompatActivity {
         Intent gameActivity = new Intent(Leaderboard.this, MainActivity.class);
         startActivity(gameActivity);
     }
+
 }
