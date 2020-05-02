@@ -116,7 +116,7 @@ public class Leaderboard extends AppCompatActivity {
         }
     }
 
-    public void goto_main(View view){
+    public void onBackPressed() {
         Intent gameActivity = new Intent(Leaderboard.this, MainActivity.class);
         startActivity(gameActivity);
     }

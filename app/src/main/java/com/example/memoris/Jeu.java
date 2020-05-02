@@ -22,9 +22,10 @@ public class Jeu extends AppCompatActivity {
     private ViewPager2 viewPager2;
     private Handler sliderHandler = new Handler();
 
-    static ArrayList<Integer> list_rep = new ArrayList<>();
+    static ArrayList<Integer> List_rep = new ArrayList<>();
     static ArrayList<Integer> List_affiche = new ArrayList<>();
     static ArrayList<Integer> List_reponse = new ArrayList<>();
+
     HomeWatcher mHomeWatcher;
     private boolean mIsBound = false;
     private Music_Background mServ;
@@ -76,7 +77,7 @@ public class Jeu extends AppCompatActivity {
 
         // CREATION LISTE DES MOTS DU JEU ( A COMPLETER A CHAQUE AJOUT DE MOT)
         ArrayList<Integer> List_mot = new ArrayList<>();
-        List_mot.add(R.string.apple);
+            List_mot.add(R.string.apple);
         List_mot.add(R.string.balloon);
         List_mot.add(R.string.banana);
         List_mot.add(R.string.bellpepper);
@@ -175,13 +176,13 @@ public class Jeu extends AppCompatActivity {
             do{ x=(int)(Math.random()*(List_affiche.size()-1+1)+0);}
             while(List_reponse.contains(List_affiche.get(x)));
             List_reponse.add(List_affiche.get(x));
-            list_rep.add(List_affiche_image.get(x));
+            List_rep.add(List_affiche_image.get(x));
         }
 
         //CREATION DU SLIDER
         final List<SliderItem> sliderItems = new ArrayList<>();
         for (int i=0;i<nb_reponse;i++) {
-            sliderItems.add(new SliderItem(list_rep.get(i)));
+            sliderItems.add(new SliderItem(List_rep.get(i)));
         }
 
 
@@ -230,7 +231,7 @@ public class Jeu extends AppCompatActivity {
         @Override
         public void run() {
             viewPager2.setCurrentItem(viewPager2.getCurrentItem() + 1);
-            if(viewPager2.getCurrentItem() == list_rep.size()-1){
+            if(viewPager2.getCurrentItem() == List_rep.size()-1){
                 timer_to_next.start();
             }
 

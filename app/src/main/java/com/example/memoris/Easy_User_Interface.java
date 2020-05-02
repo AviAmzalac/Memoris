@@ -175,12 +175,6 @@ public class Easy_User_Interface extends AppCompatActivity {
 
     }
 
-    public void goto_main(View view){
-        Intent gameActivity = new Intent(Easy_User_Interface.this, MainActivity.class);
-
-        startActivity(gameActivity);
-    }
-
     public void goto_resultspage(){
         Intent intent = new Intent(Easy_User_Interface.this, Results_page.class);
         intent.putExtra("Ranswer", right_answer);

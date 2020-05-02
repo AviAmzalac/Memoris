@@ -96,10 +96,6 @@ public class Difficulty_page extends AppCompatActivity {
         }
     }
 
-    public void goto_main(View view){
-        Intent gameActivity = new Intent(Difficulty_page.this, MainActivity.class);
-        startActivity(gameActivity);
-    }
 
     public void goto_timer_page(View view){
         Intent gameActivity = new Intent(Difficulty_page.this, Timer_page.class);
