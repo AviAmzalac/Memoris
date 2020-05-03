@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         SoundOn = findViewById(R.id.imageButtonSoundOn);
         myDatabase = new MyDbAdapter(this);
         myDatabase.open();
+
         ArrayList<Score> mes_scores = myDatabase.getAllScore();
         for (int i = 0; i < mes_scores.size(); i++) {
             System.out.println(mes_scores.get(i).getNb_answers());
@@ -156,7 +157,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void erase_data(View view) {
-        myDatabase.insert_score("NIGHTMARE", 2);
         if (myDatabase.countEvent() > 0) {
             myDatabase.deleteTable();
         } else {

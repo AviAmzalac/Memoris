@@ -178,7 +178,7 @@ public class Easy_User_Interface extends AppCompatActivity {
     public void goto_resultspage(){
         Intent intent = new Intent(Easy_User_Interface.this, Results_page.class);
         intent.putExtra("Ranswer", right_answer);
-        intent.putExtra("Difficulty", "EASY");
+        intent.putExtra("Difficulty","EASY");
         startActivity(intent);
     }
 

@@ -3,7 +3,7 @@
     <string name="app_name">Memoris</string>
     <string name="new_game">Nouvelle partie</string>
     <string name="settings">Options</string>
-    <string name="Credit">Crédits</string>
+    <string name="Credit">Credits</string>
     <string name="button_back">Retour</string>
     <string name="button_ready">PRET</string>
     <string name="button_erase">Reset</string>

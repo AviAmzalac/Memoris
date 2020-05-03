@@ -31,15 +31,32 @@ public class MyArrayAdapter extends ArrayAdapter<Score> {
         TextView nbrep_champ = (TextView) cellView.findViewById(R.id.nb_rep);
         Score score = getItem(position);
         essai_champ.setText(Integer.toString(score.getId()));
-        difficulty_champ.setText(score.getDifficulty());
+        switch (score.getDifficulty()){
+            case "EASY":
+                difficulty_champ.setText(R.string.button_easy);
+                break;
+            case "MEDIUM":
+                difficulty_champ.setText(R.string.button_medium);
+                break;
+            case "HARD":
+                difficulty_champ.setText(R.string.button_hard);
+                break;
+            case "NIGHTMARE":
+                difficulty_champ.setText(R.string.button_competitive);
+                break;
+            default:
+                difficulty_champ.setText("");
+                break;
+        }
+
         //A voir si possibilité de recuperer les difficulté par le fichier string dans les conditions car String!=Int
-        if (difficulty_champ.getText() == "EASY" && score.getNb_answers() == 5) {
+        if (score.getDifficulty().equals("EASY") && score.getNb_answers() == 5) {
             nbrep_champ.setText(R.string.perfect_label);
-        } else if (difficulty_champ.getText() == "MEDIUM" && score.getNb_answers() == 6) {
+        } else if (score.getDifficulty().equals("MEDIUM") && score.getNb_answers() == 6) {
             nbrep_champ.setText(R.string.perfect_label);
-        } else if (difficulty_champ.getText() == "HARD" && score.getNb_answers() == 7) {
+        } else if (score.getDifficulty().equals("HARD") && score.getNb_answers() == 7) {
             nbrep_champ.setText(R.string.perfect_label);
-        } else if (difficulty_champ.getText() == "NIGHTMARE" && score.getNb_answers() == 8) {
+        } else if (score.getDifficulty().equals("NIGHTMARE") && score.getNb_answers() == 8) {
             nbrep_champ.setText(R.string.perfect_label);
         } else {
             nbrep_champ.setText(Integer.toString(score.getNb_answers()));
