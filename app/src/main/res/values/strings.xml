@@ -26,7 +26,7 @@
     <string name="button_hard">HARD</string>
     <string name="button_competitive">NIGHTMARE </string>
 
-    <!-- Jeu -->
+    <!-- WORDS -->
     <string name="apple">Apple</string>
     <string name="balloon">Balloon</string>
     <string name="banana">Banana</string>
@@ -34,8 +34,8 @@
     <string name="bicycle">Bicycle</string>
     <string name="bird">Bird</string>
     <string name="butterfly">Butterfly</string>
-    <string name="cabbage">Babbage</string>
-    <string name="camera">Bamera</string>
+    <string name="cabbage">Cabbage</string>
+    <string name="camera">Camera</string>
     <string name="car">Car</string>
     <string name="carrot">Carrot</string>
     <string name="cat">Cat</string>
@@ -69,7 +69,7 @@
 
     <!-- Resultat -->
     <string name="resultat_titre">RESULTS</string>
-    <string name="tryagain">Try Again ?</string>
+    <string name="tryagain">Try Again</string>
 
 
 

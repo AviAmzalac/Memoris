@@ -25,6 +25,7 @@ public class Jeu extends AppCompatActivity {
     static ArrayList<Integer> List_rep = new ArrayList<>();
     static ArrayList<Integer> List_affiche = new ArrayList<>();
     static ArrayList<Integer> List_reponse = new ArrayList<>();
+    static ArrayList<Integer> List_mauvaises_reponses = new ArrayList<>();
 
     HomeWatcher mHomeWatcher;
     private boolean mIsBound = false;
@@ -170,7 +171,7 @@ public class Jeu extends AppCompatActivity {
             List_affiche_image.add((List_Items.get(x)));
         }
 
-        // LISTE DES REPONSES --------------------------------------------------------------------------------------------------
+        // LISTE DES BONNES REPONSES --------------------------------------------------------------------------------------------------
         int nb_reponse = 6;
         for(int i = 0; i< nb_reponse; i++){
             do{ x=(int)(Math.random()*(List_affiche.size()-1+1)+0);}
@@ -178,6 +179,18 @@ public class Jeu extends AppCompatActivity {
             List_reponse.add(List_affiche.get(x));
             List_rep.add(List_affiche_image.get(x));
         }
+        // LISTE DES MAUVAISES REPONSES --------------------------------------------------------------------------------------------------
+        int nb_mauvaises_reponses = nb_mot_affiche-nb_reponse;
+        for(int i = 0; i< List_affiche.size();i++){
+            if(List_reponse.contains(List_affiche.get(i)))
+        }
+        for(int i = -1; i< nb_mauvaises_reponses; i++){
+            do{ i++;}
+            while(List_reponse.contains(List_affiche.get(i)));
+            List_mauvaises_reponses.add(List_affiche.get(i));
+            //List_rep.add(List_affiche_image.get(x));
+        }
+
 
         //CREATION DU SLIDER
         final List<SliderItem> sliderItems = new ArrayList<>();

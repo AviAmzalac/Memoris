@@ -68,6 +68,7 @@ public class Easy_User_Interface extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
         setContentView(R.layout.easy_user_interface);
         error_text = findViewById(R.id.error_counter);
 
@@ -106,6 +107,7 @@ public class Easy_User_Interface extends AppCompatActivity {
 
         System.out.println("+++++++++++++++ LIST AFFICHE"+ Jeu.List_affiche);
         System.out.println("+++++++++++++++ LIST REP"+ Jeu.List_reponse);
+        System.out.println("LISTE DES MAUVAISE REPONSE"+Jeu.List_mauvaises_reponses);
         Integer text1 = Jeu.List_affiche.get(0);
         System.out.println(getResources().getString(text1));
         afficher_list();

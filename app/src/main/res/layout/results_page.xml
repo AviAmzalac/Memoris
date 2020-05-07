@@ -29,21 +29,13 @@
 
     <Button
         android:id="@+id/tryAgain"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginTop="50dp"
+        android:background="@drawable/retry"
+        android:fontFamily="@font/sfas"
         android:onClick="goto_difficulty_page"
         android:text="@string/tryagain"
-        android:fontFamily="@font/sfas"
         android:textAllCaps="false" />
-
-    <ImageButton
-        android:id="@+id/btn_bck"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:background="@android:color/transparent"
-        android:onClick="goto_main"
-        app:srcCompat="@drawable/back_arrow" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

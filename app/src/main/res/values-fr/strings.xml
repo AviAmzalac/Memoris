@@ -3,7 +3,7 @@
     <string name="app_name">Memoris</string>
     <string name="new_game">Nouvelle partie</string>
     <string name="settings">Options</string>
-    <string name="Credit">Credits</string>
+    <string name="Credit">Crédits</string>
     <string name="button_back">Retour</string>
     <string name="button_ready">PRET</string>
     <string name="button_erase">Reset</string>
@@ -13,6 +13,7 @@
     <string name="button_medium">MOYEN</string>
     <string name="button_hard">DIFFICILE</string>
     <string name="button_competitive">CAUCHEMARD</string>
+    <!-- MOTS -->
     <string name="apple">Pomme</string>
     <string name="balloon">Ballon</string>
     <string name="banana">Banane</string>
@@ -53,7 +54,7 @@
     <string name="watermelon">Pasteque</string>
     <string name="whale">Baleine</string>
     <string name="resultat_titre">RESULTATS</string>
-    <string name="tryagain">Réessayer ?</string>
+    <string name="tryagain">Réessayer</string>
     <string name="essai_label">Essai</string>
     <string name="difficulty_label">Difficultés</string>
     <string name="nb_rep_label">Réponses</string>
