@@ -7,7 +7,7 @@ import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.PowerManager;
-import android.view.View;
+
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -61,7 +61,6 @@ public class Leaderboard extends AppCompatActivity {
             MyArrayAdapter myArrayAdapter = new MyArrayAdapter(this, scores_table);
             leaderboard.setAdapter(myArrayAdapter);
         }
-
 
         mHomeWatcher = new HomeWatcher(this);
         mHomeWatcher.setOnHomePressedListener(new HomeWatcher.OnHomePressedListener() {

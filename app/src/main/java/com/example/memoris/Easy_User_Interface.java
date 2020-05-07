@@ -1,5 +1,4 @@
 package com.example.memoris;
-
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -42,7 +41,6 @@ public class Easy_User_Interface extends AppCompatActivity {
     //////////////////////////////////////////////////////////////////
 
     static ArrayList<TextView> List_button = new ArrayList<>();
-    static int score;
     private int nb_error =0;
     static int right_answer = 0;
     private TextView text_1;
@@ -67,7 +65,6 @@ public class Easy_User_Interface extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
 
         setContentView(R.layout.easy_user_interface);
         error_text = findViewById(R.id.error_counter);

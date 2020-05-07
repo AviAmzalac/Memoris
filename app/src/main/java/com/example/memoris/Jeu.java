@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.ServiceConnection;
+
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -182,7 +183,7 @@ public class Jeu extends AppCompatActivity {
         // LISTE DES MAUVAISES REPONSES --------------------------------------------------------------------------------------------------
         int nb_mauvaises_reponses = nb_mot_affiche-nb_reponse;
         for(int i = 0; i< List_affiche.size();i++){
-            if(List_reponse.contains(List_affiche.get(i)))
+            if(List_reponse.contains(List_affiche.get(i)));
         }
         for(int i = -1; i< nb_mauvaises_reponses; i++){
             do{ i++;}

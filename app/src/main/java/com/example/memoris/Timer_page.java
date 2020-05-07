@@ -63,6 +63,7 @@ public class Timer_page extends AppCompatActivity implements View.OnClickListene
         btnrdy.setOnClickListener(this);
         countdown = findViewById(R.id.countdown);
 
+
         mHomeWatcher = new HomeWatcher(this);
         mHomeWatcher.setOnHomePressedListener(new HomeWatcher.OnHomePressedListener() {
             @Override

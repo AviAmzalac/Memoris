@@ -20,7 +20,6 @@ public class Results_page extends AppCompatActivity {
     HomeWatcher mHomeWatcher;
     private boolean mIsBound = false;
     private Music_Background mServ;
-    private TextView scoreLabel;
     private MyDbAdapter myDatabase;
     private ServiceConnection Scon =new ServiceConnection(){
 
@@ -101,7 +100,6 @@ public class Results_page extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-
         PowerManager pm = (PowerManager)
                 getSystemService(Context.POWER_SERVICE);
         boolean isScreenOn = false;

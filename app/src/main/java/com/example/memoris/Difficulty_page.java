@@ -61,6 +61,7 @@ public class Difficulty_page extends AppCompatActivity {
         mHomeWatcher.startWatch();
     }
 
+
     @Override
     protected void onResume() {
         super.onResume();
