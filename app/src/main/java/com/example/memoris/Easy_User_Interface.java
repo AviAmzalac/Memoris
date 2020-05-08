@@ -3,11 +3,13 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.PowerManager;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -60,6 +62,8 @@ public class Easy_User_Interface extends AppCompatActivity {
     private TextView text_12;
     private TextView error_text;
 
+    private TextView indice_text;
+
 
 
     @Override
@@ -68,6 +72,7 @@ public class Easy_User_Interface extends AppCompatActivity {
 
         setContentView(R.layout.easy_user_interface);
         error_text = findViewById(R.id.error_counter);
+        indice_text = findViewById(R.id.help);
 
         text_1 = findViewById(R.id.text_1);
         text_2 = findViewById(R.id.text_2);
@@ -105,14 +110,13 @@ public class Easy_User_Interface extends AppCompatActivity {
         System.out.println("+++++++++++++++ LIST AFFICHE"+ Jeu.List_affiche);
         System.out.println("+++++++++++++++ LIST REP"+ Jeu.List_reponse);
         System.out.println("LISTE DES MAUVAISE REPONSE"+Jeu.List_mauvaises_reponses);
-        Integer text1 = Jeu.List_affiche.get(0);
-        System.out.println(getResources().getString(text1));
+
         afficher_list();
 
         for (int i = 0; i <= Jeu.List_affiche.size()-1; i++) {
             Integer text = Jeu.List_affiche.get(i);
             List_button.get(i).setText(getResources().getString(text));
-
+        if(nb_error > 1){goto_resultspage();}
         }
 
         mHomeWatcher = new HomeWatcher(this);
@@ -182,72 +186,91 @@ public class Easy_User_Interface extends AppCompatActivity {
     }
 
     //////////////////////////////
+    //lance la vérification sur le bouton choisi, et le fait disparaitre , si le choix est mauvais on enleve le mot de la liste de mauvaise reponse
     public void push_button(View view){
 
             switch (view.getId()) {
                 case R.id.text_1:
-                    text_1.setVisibility(View.INVISIBLE);
-                    verification(view);
+                    text_1.setVisibility(View.INVISIBLE);recuperation_indice_mauvaise_rep(view);
+                    //  verification(view);
+                    if(!verification(view)){Jeu.List_mauvaises_reponses.remove(recuperation_indice_mauvaise_rep(view));}else{;}afficher_list();
+
                     break;
                 case R.id.text_2:
-                    text_2.setVisibility(View.INVISIBLE);
-                    verification(view);
+                    text_2.setVisibility(View.INVISIBLE);recuperation_indice_mauvaise_rep(view);
+                    //  verification(view);
+                    if(!verification(view)){Jeu.List_mauvaises_reponses.remove(recuperation_indice_mauvaise_rep(view));}else{;}afficher_list();
                     break;
                 case R.id.text_3:
-                    text_3.setVisibility(View.INVISIBLE);
-                    verification(view);
+                    text_3.setVisibility(View.INVISIBLE);recuperation_indice_mauvaise_rep(view);
+                    //  verification(view);
+                    if(!verification(view)){Jeu.List_mauvaises_reponses.remove(recuperation_indice_mauvaise_rep(view));}else{;}afficher_list();
                     break;
 
                 case R.id.text_4:
-                    text_4.setVisibility(View.INVISIBLE);
-                    verification(view);
+                    text_4.setVisibility(View.INVISIBLE);recuperation_indice_mauvaise_rep(view);
+                    //  verification(view);
+                    if(!verification(view)){Jeu.List_mauvaises_reponses.remove(recuperation_indice_mauvaise_rep(view));}else{;}afficher_list();
                     break;
                 case R.id.text_5:
-                    text_5.setVisibility(View.INVISIBLE);
-                    verification(view);
+                    text_5.setVisibility(View.INVISIBLE);recuperation_indice_mauvaise_rep(view);
+                    //  verification(view);
+                    if(!verification(view)){Jeu.List_mauvaises_reponses.remove(recuperation_indice_mauvaise_rep(view));}else{;}afficher_list();
                     break;
                 case R.id.text_6:
-                    text_6.setVisibility(View.INVISIBLE);
-                    verification(view);
+                    text_6.setVisibility(View.INVISIBLE);recuperation_indice_mauvaise_rep(view);
+                    //   verification(view);
+                    if(!verification(view)){Jeu.List_mauvaises_reponses.remove(recuperation_indice_mauvaise_rep(view));}else{;}afficher_list();
                     break;
 
                 case R.id.text_7:
-                    text_7.setVisibility(View.INVISIBLE);
-                    verification(view);
+                    text_7.setVisibility(View.INVISIBLE);recuperation_indice_mauvaise_rep(view);
+                    //  verification(view);
+                    if(!verification(view)){Jeu.List_mauvaises_reponses.remove(recuperation_indice_mauvaise_rep(view));}else{;}afficher_list();
                     break;
                 case R.id.text_8:
-                    text_8.setVisibility(View.INVISIBLE);
-                    verification(view);
+                    text_8.setVisibility(View.INVISIBLE);recuperation_indice_mauvaise_rep(view);
+                    //  verification(view);
+                    if(!verification(view)){Jeu.List_mauvaises_reponses.remove(recuperation_indice_mauvaise_rep(view));}else{;}afficher_list();
                     break;
                 case R.id.text_9:
-                    text_9.setVisibility(View.INVISIBLE);
-                    verification(view);
+                    text_9.setVisibility(View.INVISIBLE);recuperation_indice_mauvaise_rep(view);
+                    //   verification(view);
+                   if(!verification(view)){Jeu.List_mauvaises_reponses.remove(recuperation_indice_mauvaise_rep(view));}else{;}afficher_list();
                     break;
 
                 case R.id.text_10:
-                    text_10.setVisibility(View.INVISIBLE);
-                    verification(view);
+                    text_10.setVisibility(View.INVISIBLE);recuperation_indice_mauvaise_rep(view);
+                    // verification(view);
+                   if(!verification(view)){Jeu.List_mauvaises_reponses.remove(recuperation_indice_mauvaise_rep(view));}else{;}afficher_list();
                     break;
                 case R.id.text_11:
-                    text_11.setVisibility(View.INVISIBLE);
-                    verification(view);
+                    text_11.setVisibility(View.INVISIBLE);recuperation_indice_mauvaise_rep(view);
+                    // verification(view);
+                    if(!verification(view)){Jeu.List_mauvaises_reponses.remove(recuperation_indice_mauvaise_rep(view));}else{;}afficher_list();
                     break;
                 case R.id.text_12:
-                    text_12.setVisibility(View.INVISIBLE);
-                    verification(view);
+                    text_12.setVisibility(View.INVISIBLE);recuperation_indice_mauvaise_rep(view);
+                    //verification(view);
+                    if(!verification(view)){Jeu.List_mauvaises_reponses.remove(recuperation_indice_mauvaise_rep(view));}else{;}afficher_list();
+
                     break;
                 default:
                     break;
             }
 
     }
+    // Verification qui permet de savoir si le mot choisis est correct ou non ,
+    // si il est correct on retourne vrai
+    // sinon on retourne faux et on augmente le nombre d'erreur de 1
+    // si on arrive a la limite du nombre d'erreur acceptée on va sur la page de resultat
     public boolean verification(View view){
         int flag = 0;
         int i=0;
 
         TextView b = (TextView)view;
         String buttonText = b.getText().toString();
-        System.out.println(" NOM DU TEXT DU BUTOTN : "+buttonText);
+        System.out.println(" NOM DU TEXT DU BOUTON : "+buttonText);
 
         //        System.out.println(getResources().getString(text1));
         while(flag==0 && i < Jeu.List_reponse.size()){
@@ -263,14 +286,15 @@ public class Easy_User_Interface extends AppCompatActivity {
 
                 System.out.println( getResources().getString(text1)+" Faux");}
                  i++;
-
-
            }
         if(flag ==1) {
             System.out.println("Nombre d'erreur: "+nb_error+"/3");
             if(right_answer == 6) goto_resultspage();
+
             return true;
+
         }else{ nb_error++;
+
             System.out.println("Nombre d'erreur: "+nb_error+"/3");
             error_text.setText(nb_error+"");
             if(nb_error >= 3){
@@ -279,17 +303,60 @@ public class Easy_User_Interface extends AppCompatActivity {
             return false;
         }
     }
+    //Recuperation de l'indice du mot dans la liste_mauvaise reponse   ,
+    public int recuperation_indice_mauvaise_rep(View view){
+        int flag=1;
+        int i=0;
+        TextView b = (TextView)view;
+        String buttonText = b.getText().toString();
+            while(flag==1 && i< Jeu.List_mauvaises_reponses.size()){
+                int text1 = Jeu.List_mauvaises_reponses.get(i);
+                if(!(buttonText.equals(getResources().getString(text1)))){
+                    i++;
 
+                }else{ flag = 0; }
+
+            }
+        System.out.println("i = "+i+"  textbouton= "+buttonText+"  ");
+        return i;
+    }
+    // Affichage de l'indice grace a un toast de courte durée
+    public void indice_toast(View view){
+
+        int text= Jeu.List_mauvaises_reponses.get(0);
+        String indice = getResources().getString(text);
+        Toast toast = Toast.makeText(Easy_User_Interface.this, getResources().getString(R.string.help)+indice, Toast.LENGTH_SHORT);
+        View toastview = toast.getView();
+        TextView tv = (TextView) toastview.findViewById(android.R.id.message);
+        tv.setTextSize(21);
+        tv.setTextColor(Color.parseColor("#000000"));
+        tv.setCompoundDrawablesWithIntrinsicBounds(R.drawable.toast, 0, 0, 0);
+        tv.setCompoundDrawablePadding(15);
+        toastview.setBackgroundColor(Color.parseColor( "#000000"));
+        toast.show();
+    }
+    // Permet d'afficher les differentes listes   ( aide pour la programmation )
     public void afficher_list(){
+        //liste mots
+        System.out.print("liste mot: ");
         for(int i = 0; i< Jeu.List_affiche.size(); i++){
             int text1 = Jeu.List_affiche.get(i);
 
             System.out.print( getResources().getString(text1)+", ");
         }
+        //bonnes reponses
         System.out.println("-");
+        System.out.print("bonne_rep: ");
         for(int j = 0; j< Jeu.List_reponse.size(); j++){
             int text2 = Jeu.List_reponse.get(j);
-            System.out.print( getResources().getString(text2)+", ");
+            System.out.print(getResources().getString(text2)+", ");
+        }
+        System.out.println("-");
+        //mauvaises reponses
+        System.out.print("mauvaises_rep: ");
+        for(int j = 0; j< Jeu.List_mauvaises_reponses.size(); j++){
+            int text2 = Jeu.List_mauvaises_reponses.get(j);
+            System.out.print(getResources().getString(text2)+", ");
         }
         System.out.println("-");
     }

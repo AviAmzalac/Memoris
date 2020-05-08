@@ -180,17 +180,17 @@ public class Jeu extends AppCompatActivity {
             List_reponse.add(List_affiche.get(x));
             List_rep.add(List_affiche_image.get(x));
         }
+
         // LISTE DES MAUVAISES REPONSES --------------------------------------------------------------------------------------------------
-        int nb_mauvaises_reponses = nb_mot_affiche-nb_reponse;
-        for(int i = 0; i< List_affiche.size();i++){
-            if(List_reponse.contains(List_affiche.get(i)));
+
+        for(int j = 0; j< List_affiche.size();j++){
+            if(List_reponse.contains(List_affiche.get(j))){
+
+            }else{
+                List_mauvaises_reponses.add(List_affiche.get(j));
+            }
         }
-        for(int i = -1; i< nb_mauvaises_reponses; i++){
-            do{ i++;}
-            while(List_reponse.contains(List_affiche.get(i)));
-            List_mauvaises_reponses.add(List_affiche.get(i));
-            //List_rep.add(List_affiche_image.get(x));
-        }
+
 
 
         //CREATION DU SLIDER
