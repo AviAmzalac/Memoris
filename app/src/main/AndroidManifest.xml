@@ -21,13 +21,20 @@
             </intent-filter>
         </activity>
 
-
-        <activity android:name="com.example.memoris.Jeu"
-            android:label="jeu"
+        <activity android:name="com.example.memoris.Credits"
+            android:label="credits"
             android:parentActivityName="com.example.memoris.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.memoris.MainActivity"/>
+        </activity>
+
+        <activity android:name="com.example.memoris.Jeu"
+            android:label="jeu"
+            android:parentActivityName="com.example.memoris.Timer_page">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.memoris.Timer_page"/>
         </activity>
 
 
@@ -58,19 +65,19 @@
 
         <activity android:name="com.example.memoris.Easy_User_Interface"
             android:label="Reponse_easy"
-            android:parentActivityName="com.example.memoris.Timer_page">
+            android:parentActivityName="com.example.memoris.Jeu">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.memoris.MainActivity"/>
+                android:value="com.example.memoris.Jeu"/>
         </activity>
 
         <activity android:name="com.example.memoris.Results_page"
             android:label="Results_page"
-            android:parentActivityName="com.example.memoris.MainActivity">
+            android:parentActivityName="com.example.memoris.Easy_User_Interface">
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.memoris.MainActivity"/>
+                android:value="com.example.memoris.Easy_User_Interface"/>
         </activity>
 
         <service

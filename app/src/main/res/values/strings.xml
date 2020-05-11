@@ -11,6 +11,15 @@
     <string name="button_leaderboard">Leaderboard</string>
     <string name="soundicon">SoundIcon</string>
 
+    <!-- Credits -->
+    <string name="credit_title">CREDITS</string>
+    <string name="music">MUSIC</string>
+    <string name="thanks">ACKNOWLEDGEMENTS</string>
+    <string name="creators">CREATORS</string>
+
+
+
+
     <!-- Leaderboard -->
     <string name="leaderboard_title">LEADERBOARD</string>
     <string name="perfect_label">PERFECT</string>

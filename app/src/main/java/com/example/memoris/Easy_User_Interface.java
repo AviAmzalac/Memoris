@@ -341,7 +341,7 @@ public class Easy_User_Interface extends AppCompatActivity {
         }
         if (flag == 1) {
             System.out.println("Nombre d'erreur: " + nb_error + "/3");
-            if (right_answer == 6) goto_resultspage();
+            if (right_answer == 5) goto_resultspage();
 
             return true;
 

@@ -156,6 +156,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(gameActivity);
     }
 
+    public void goto_credits(View view) {
+        Intent gameActivity = new Intent(MainActivity.this, Credits.class);
+        startActivity(gameActivity);
+    }
+
     public void erase_data(View view) {
         if (myDatabase.countEvent() > 0) {
             myDatabase.deleteTable();

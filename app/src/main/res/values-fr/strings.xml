@@ -11,6 +11,14 @@
     <string name="leaderboard_title">SCORES</string>
     <string name="soundicon">SoundIcon</string>
 
+    <!-- Credits -->
+    <string name="credit_title">CREDITS</string>
+    <string name="music">MUSIQUE</string>
+    <string name="thanks">REMERCIEMENTS</string>
+    <string name="creators">CREATEURS</string>
+
+
+
     <!-- tableau de bord -->
     <string name="essai_label">Essai</string>
     <string name="difficulty_label">Difficultés</string>
