@@ -16,11 +16,11 @@
         android:background="@android:color/transparent"
         android:maxWidth="70dp"
         android:maxHeight="70dp"
-        android:onClick="goto_main"
+        android:onClick="indice_toast"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/lightbulb" />
+        app:srcCompat="@drawable/lock" />
 
 
     <TextView

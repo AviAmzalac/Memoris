@@ -28,6 +28,7 @@ public class Jeu extends AppCompatActivity {
     static ArrayList<Integer> List_reponse = new ArrayList<>();
     static ArrayList<Integer> List_mauvaises_reponses = new ArrayList<>();
 
+    static int nb_reponse;
     HomeWatcher mHomeWatcher;
     private boolean mIsBound = false;
     private Music_Background mServ;
@@ -60,8 +61,30 @@ public class Jeu extends AppCompatActivity {
 
         @Override
         public void onFinish() {
-            Intent gameActivity = new Intent(Jeu.this, Easy_User_Interface.class);
-            startActivity(gameActivity);
+            Intent gameActivity;
+            switch(Difficulty_page.difficulty){
+                case R.id.button_easy:
+                    gameActivity = new Intent(Jeu.this, Easy_User_Interface.class);
+                    startActivity(gameActivity);
+                    break;
+                case R.id.button_medium:
+                    gameActivity = new Intent(Jeu.this, Medium_User_Interface.class);
+                    startActivity(gameActivity);
+                    break;
+                case R.id.button_hard:
+                    gameActivity = new Intent(Jeu.this, Hard_User_Interface.class);
+                    startActivity(gameActivity);
+                    break;
+
+                case R.id.button_nightmare:
+                    gameActivity = new Intent(Jeu.this, Nightmare_User_Interface.class);
+                    startActivity(gameActivity);
+                    break;
+
+                default:
+                    break;
+            }
+
         }
     };
 
@@ -164,7 +187,23 @@ public class Jeu extends AppCompatActivity {
         // LISTE DES MOTS AFFICHES POUR LE JOUEUR ---------------------------------------------------------------------------
         ArrayList<Integer> List_affiche_image = new ArrayList<>();
         int x;
-        int nb_mot_affiche = 12;
+        int nb_mot_affiche;
+        switch(Difficulty_page.difficulty){
+            case R.id.button_easy:
+                nb_mot_affiche = 12;
+                break;
+            case R.id.button_medium:
+                nb_mot_affiche = 14;
+                break;
+            case R.id.button_hard:
+                nb_mot_affiche = 16;
+                break;
+
+            default:
+                nb_mot_affiche = 18;
+                break;
+        }
+
         for(int i = 0; i< nb_mot_affiche; i++){
             do{ x=(int)(Math.random()*(List_mot.size()-1+1)+0);}
             while(List_affiche.contains(List_mot.get(x)));
@@ -173,7 +212,18 @@ public class Jeu extends AppCompatActivity {
         }
 
         // LISTE DES BONNES REPONSES --------------------------------------------------------------------------------------------------
-        int nb_reponse = 6;
+
+        switch(Difficulty_page.difficulty){
+            case R.id.button_easy:
+                nb_reponse = 5;
+                break;
+            case R.id.button_medium:
+                nb_reponse = 6;
+                break;
+            default:
+                nb_reponse = 7;
+                break;
+        }
         for(int i = 0; i< nb_reponse; i++){
             do{ x=(int)(Math.random()*(List_affiche.size()-1+1)+0);}
             while(List_reponse.contains(List_affiche.get(x)));

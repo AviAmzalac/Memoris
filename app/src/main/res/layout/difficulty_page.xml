@@ -28,6 +28,7 @@
         android:layout_height="110dp"
         android:background="@drawable/yellow_round_button"
         android:fontFamily="@font/sfas"
+        android:onClick="goto_timer_page"
         android:text="@string/button_medium"
         android:textSize="46sp"
         app:layout_constraintBottom_toTopOf="@+id/invisible_center"
@@ -41,6 +42,7 @@
         android:layout_height="110dp"
         android:background="@drawable/red_round_button"
         android:fontFamily="@font/sfas"
+        android:onClick="goto_timer_page"
         android:text="@string/button_hard"
         android:textSize="46sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,13 +51,14 @@
         app:layout_constraintTop_toBottomOf="@+id/invisible_center" />
 
     <Button
-        android:id="@+id/button_neightmare"
+        android:id="@+id/button_nightmare"
         android:layout_width="300dp"
         android:layout_height="110dp"
         android:layout_marginTop="128dp"
         android:background="@drawable/dark_round_button"
         android:fontFamily="@font/sfas"
         android:text="@string/button_competitive"
+        android:onClick="goto_timer_page"
         android:textSize="46sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

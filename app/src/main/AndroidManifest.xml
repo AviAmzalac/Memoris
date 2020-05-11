@@ -71,6 +71,30 @@
                 android:value="com.example.memoris.Jeu"/>
         </activity>
 
+        <activity android:name="com.example.memoris.Medium_User_Interface"
+            android:label="Reponse_Medium"
+            android:parentActivityName="com.example.memoris.Jeu">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.memoris.Jeu"/>
+        </activity>
+
+        <activity android:name="com.example.memoris.Hard_User_Interface"
+            android:label="Reponse_Hard"
+            android:parentActivityName="com.example.memoris.Jeu">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.memoris.Jeu"/>
+        </activity>
+
+        <activity android:name="com.example.memoris.Nightmare_User_Interface"
+            android:label="Reponse_Nightmare"
+            android:parentActivityName="com.example.memoris.Jeu">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.memoris.Jeu"/>
+        </activity>
+
         <activity android:name="com.example.memoris.Results_page"
             android:label="Results_page"
             android:parentActivityName="com.example.memoris.Easy_User_Interface">

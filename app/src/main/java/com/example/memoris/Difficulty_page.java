@@ -13,7 +13,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.memories.R;
 
 public class Difficulty_page extends AppCompatActivity {
-
+    //recuperation de  l'id du button , afin de savoir le niveau de difficulté choisis
+    static Integer difficulty;
     //GESTION MUSIC
     HomeWatcher mHomeWatcher;
     private boolean mIsBound = false;
@@ -99,8 +100,11 @@ public class Difficulty_page extends AppCompatActivity {
 
 
     public void goto_timer_page(View view){
+        difficulty = view.getId();
         Intent gameActivity = new Intent(Difficulty_page.this, Timer_page.class);
         startActivity(gameActivity);
+
+
     }
     public void onBackPressed() {
         Intent gameActivity = new Intent(Difficulty_page.this, MainActivity.class);

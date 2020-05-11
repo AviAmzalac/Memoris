@@ -20,7 +20,7 @@ import com.example.memories.R;
 
 import java.util.ArrayList;
 
-public class Easy_User_Interface extends AppCompatActivity {
+public class Nightmare_User_Interface extends AppCompatActivity {
 
     HomeWatcher mHomeWatcher;
     private boolean mIsBound = false;
@@ -62,6 +62,14 @@ public class Easy_User_Interface extends AppCompatActivity {
     private TextView text_10;
     private TextView text_11;
     private TextView text_12;
+
+    private TextView text_13;
+    private TextView text_14;
+    private TextView text_15;
+
+    private TextView text_16;
+    private TextView text_17;
+    private TextView text_18;
     private TextView error_text;
 
     private TextView indice_text;
@@ -71,7 +79,7 @@ public class Easy_User_Interface extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.easy_user_interface);
+        setContentView(R.layout.nightmare_user_interface);
         error_text = findViewById(R.id.error_counter);
         indice_text = findViewById(R.id.help);
 
@@ -91,6 +99,14 @@ public class Easy_User_Interface extends AppCompatActivity {
         text_11 = findViewById(R.id.text_11);
         text_12 = findViewById(R.id.text_12);
 
+        text_13 = findViewById(R.id.text_13);
+        text_14 = findViewById(R.id.text_14);
+        text_15 = findViewById(R.id.text_15);
+
+        text_16 = findViewById(R.id.text_16);
+        text_17 = findViewById(R.id.text_17);
+        text_18 = findViewById(R.id.text_18);
+
         List_button.add(text_1);
         List_button.add(text_2);
         List_button.add(text_3);
@@ -106,6 +122,14 @@ public class Easy_User_Interface extends AppCompatActivity {
         List_button.add(text_10);
         List_button.add(text_11);
         List_button.add(text_12);
+
+        List_button.add(text_13);
+        List_button.add(text_14);
+        List_button.add(text_15);
+
+        List_button.add(text_16);
+        List_button.add(text_17);
+        List_button.add(text_18);
 
 
         System.out.println("+++++++++++++++ LIST AFFICHE" + Jeu.List_affiche);
@@ -180,9 +204,9 @@ public class Easy_User_Interface extends AppCompatActivity {
     }
 
     public void goto_resultspage() {
-        Intent intent = new Intent(Easy_User_Interface.this, Results_page.class);
+        Intent intent = new Intent(Nightmare_User_Interface.this, Results_page.class);
         intent.putExtra("Ranswer", right_answer);
-        intent.putExtra("Difficulty", "EASY");
+        intent.putExtra("Difficulty", "NIGHTMARE");
         startActivity(intent);
     }
 
@@ -304,6 +328,66 @@ public class Easy_User_Interface extends AppCompatActivity {
                 afficher_list();
 
                 break;
+            case R.id.text_13:
+                text_13.setVisibility(View.INVISIBLE);
+                recuperation_indice_mauvaise_rep(view);
+                //verification(view);
+                if (!verification(view)) {
+                    Jeu.List_mauvaises_reponses.remove(recuperation_indice_mauvaise_rep(view));
+                }
+                afficher_list();
+
+                break;
+            case R.id.text_14:
+                text_14.setVisibility(View.INVISIBLE);
+                recuperation_indice_mauvaise_rep(view);
+                //verification(view);
+                if (!verification(view)) {
+                    Jeu.List_mauvaises_reponses.remove(recuperation_indice_mauvaise_rep(view));
+                }
+                afficher_list();
+
+                break;
+            case R.id.text_15:
+                text_15.setVisibility(View.INVISIBLE);
+                recuperation_indice_mauvaise_rep(view);
+                //verification(view);
+                if (!verification(view)) {
+                    Jeu.List_mauvaises_reponses.remove(recuperation_indice_mauvaise_rep(view));
+                }
+                afficher_list();
+
+                break;
+            case R.id.text_16:
+                text_16.setVisibility(View.INVISIBLE);
+                recuperation_indice_mauvaise_rep(view);
+                //verification(view);
+                if (!verification(view)) {
+                    Jeu.List_mauvaises_reponses.remove(recuperation_indice_mauvaise_rep(view));
+                }
+                afficher_list();
+
+                break;
+            case R.id.text_17:
+            text_17.setVisibility(View.INVISIBLE);
+            recuperation_indice_mauvaise_rep(view);
+            //verification(view);
+            if (!verification(view)) {
+                Jeu.List_mauvaises_reponses.remove(recuperation_indice_mauvaise_rep(view));
+            }
+            afficher_list();
+
+            break;
+            case R.id.text_18:
+                text_18.setVisibility(View.INVISIBLE);
+                recuperation_indice_mauvaise_rep(view);
+                //verification(view);
+                if (!verification(view)) {
+                    Jeu.List_mauvaises_reponses.remove(recuperation_indice_mauvaise_rep(view));
+                }
+                afficher_list();
+
+                break;
             default:
                 break;
         }
@@ -347,17 +431,8 @@ public class Easy_User_Interface extends AppCompatActivity {
 
         } else {
             nb_error++;
-            // image indice
-            if(nb_error< 1){
-                indice_text.setBackgroundResource(R.drawable.lock);
-            }else{
-
-                indice_text.setBackgroundResource(R.drawable.lightbulb);
-                flag_indice = true;
-            }
             System.out.println("Nombre d'erreur: " + nb_error + "/3");
-            error_text.setText(nb_error + "");
-            if (nb_error >= 3) {
+            if (nb_error >= 1) {
                 goto_resultspage();
             }
 
@@ -387,18 +462,18 @@ public class Easy_User_Interface extends AppCompatActivity {
 
     // Affichage de l'indice grace a un toast de courte durée
     public void indice_toast(View view) {
-    if(flag_indice == true){
-        int text = Jeu.List_mauvaises_reponses.get(0);
-        String indice = getResources().getString(text);
-        Toast toast = Toast.makeText(Easy_User_Interface.this, getResources().getString(R.string.help) + indice, Toast.LENGTH_SHORT);
-        View toastview = toast.getView();
-        TextView tv = toastview.findViewById(android.R.id.message);
-        tv.setTextSize(21);
-        tv.setTextColor(Color.parseColor("#000000"));
-        tv.setCompoundDrawablesWithIntrinsicBounds(R.drawable.toast, 0, 0, 0);
-        tv.setCompoundDrawablePadding(15);
-        toastview.setBackgroundColor(Color.parseColor("#00000000"));
-        toast.show();} else { ;}
+        if(flag_indice == true){
+            int text = Jeu.List_mauvaises_reponses.get(0);
+            String indice = getResources().getString(text);
+            Toast toast = Toast.makeText(Nightmare_User_Interface.this, getResources().getString(R.string.help) + indice, Toast.LENGTH_SHORT);
+            View toastview = toast.getView();
+            TextView tv = toastview.findViewById(android.R.id.message);
+            tv.setTextSize(21);
+            tv.setTextColor(Color.parseColor("#000000"));
+            tv.setCompoundDrawablesWithIntrinsicBounds(R.drawable.toast, 0, 0, 0);
+            tv.setCompoundDrawablePadding(15);
+            toastview.setBackgroundColor(Color.parseColor("#00000000"));
+            toast.show();} else { ;}
     }
 
     // Permet d'afficher les differentes listes   ( aide pour la programmation )
@@ -428,7 +503,7 @@ public class Easy_User_Interface extends AppCompatActivity {
     }
 
     public void onBackPressed() {
-        Intent gameActivity = new Intent(Easy_User_Interface.this, MainActivity.class);
+        Intent gameActivity = new Intent(Nightmare_User_Interface.this, MainActivity.class);
         startActivity(gameActivity);
     }
 

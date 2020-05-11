@@ -12,13 +12,13 @@
         android:layout_width="111dp"
         android:layout_height="57dp"
         android:layout_marginStart="60dp"
-        android:layout_marginTop="130dp"
+        android:layout_marginTop="75dp"
         android:layout_marginBottom="24dp"
         android:background="@drawable/cadre"
+        android:fontFamily="@font/sfas"
         android:gravity="center"
         android:onClick="push_button"
         android:text="TextView"
-        android:fontFamily="@font/sfas"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/text_3"
         app:layout_constraintStart_toStartOf="parent"
@@ -172,6 +172,34 @@
         android:text="TextView"
         app:layout_constraintStart_toStartOf="@+id/text_10"
         app:layout_constraintTop_toTopOf="@+id/text_11"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/text_13"
+        android:layout_width="111dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/cadre"
+        android:fontFamily="@font/sfas"
+        android:gravity="center"
+        android:onClick="push_button"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/text_11"
+        app:layout_constraintTop_toBottomOf="@+id/text_11"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/text_14"
+        android:layout_width="111dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/cadre"
+        android:fontFamily="@font/sfas"
+        android:gravity="center"
+        android:onClick="push_button"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/text_10"
+        app:layout_constraintTop_toBottomOf="@+id/text_12"
         tools:ignore="MissingConstraints" />
 
     <TextView

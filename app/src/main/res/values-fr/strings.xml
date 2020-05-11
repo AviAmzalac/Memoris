@@ -13,11 +13,9 @@
 
     <!-- Credits -->
     <string name="credit_title">CREDITS</string>
-    <string name="music">MUSIQUE</string>
-    <string name="thanks">REMERCIEMENTS</string>
-    <string name="creators">CREATEURS</string>
-
-
+    <string name="music">MUSIC</string>
+    <string name="thanks">ACKNOWLEDGEMENTS</string>
+    <string name="creators">CREATORS</string>
 
     <!-- tableau de bord -->
     <string name="essai_label">Essai</string>

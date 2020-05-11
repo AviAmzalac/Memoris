@@ -56,7 +56,7 @@ public class MyArrayAdapter extends ArrayAdapter<Score> {
             nbrep_champ.setText(R.string.perfect_label);
         } else if (score.getDifficulty().equals("HARD") && score.getNb_answers() == 7) {
             nbrep_champ.setText(R.string.perfect_label);
-        } else if (score.getDifficulty().equals("NIGHTMARE") && score.getNb_answers() == 8) {
+        } else if (score.getDifficulty().equals("NIGHTMARE") && score.getNb_answers() == 7) {
             nbrep_champ.setText(R.string.perfect_label);
         } else {
             nbrep_champ.setText(Integer.toString(score.getNb_answers()));

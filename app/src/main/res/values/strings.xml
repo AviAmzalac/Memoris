@@ -11,21 +11,18 @@
     <string name="button_leaderboard">Leaderboard</string>
     <string name="soundicon">SoundIcon</string>
 
-    <!-- Credits -->
-    <string name="credit_title">CREDITS</string>
-    <string name="music">MUSIC</string>
-    <string name="thanks">ACKNOWLEDGEMENTS</string>
-    <string name="creators">CREATORS</string>
-
-
-
-
     <!-- Leaderboard -->
     <string name="leaderboard_title">LEADERBOARD</string>
     <string name="perfect_label">PERFECT</string>
     <string name="essai_label">Try</string>
     <string name="difficulty_label">Difficulty</string>
     <string name="nb_rep_label">Answers</string>
+
+    <!-- Credits -->
+    <string name="credit_title">CREDITS</string>
+    <string name="music">MUSIQUE</string>
+    <string name="thanks">REMERCIEMENTS</string>
+    <string name="creators">CREATEURS</string>
 
     <!-- New game -->
     <string name="button_easy">EASY</string>
