@@ -4,11 +4,11 @@
     <string name="app_name">Memoris</string>
     <string name="new_game">New Game</string>
     <string name="settings">Settings</string>
-    <string name="Credit">Credit</string>
-    <string name="button_back">Back</string>
+    <string name="Credit">CREDIT</string>
+    <string name="button_back">BACK</string>
     <string name="button_ready">READY</string>
-    <string name="button_erase">Erase Datas</string>
-    <string name="button_leaderboard">Leaderboard</string>
+    <string name="button_erase">ERASE DATA</string>
+    <string name="button_leaderboard">LEADERBOARD</string>
     <string name="soundicon">SoundIcon</string>
 
     <!-- Leaderboard -->
@@ -20,9 +20,10 @@
 
     <!-- Credits -->
     <string name="credit_title">CREDITS</string>
-    <string name="music">MUSIQUE</string>
-    <string name="thanks">REMERCIEMENTS</string>
-    <string name="creators">CREATEURS</string>
+    <string name="music">MUSIC</string>
+    <string name="thanks">ACKNOWLEDGEMENTS</string>
+    <string name="creators">CREATORS</string>
+
 
     <!-- New game -->
     <string name="button_easy">EASY</string>
@@ -72,7 +73,7 @@
     <string name="whale">Whale</string>
 
     <!-- help -->
-    <string name="help">Do not touche the : </string>
+    <string name="help">Don\'t touch the \ </string>
 
     <!-- Score -->
     <string name="resultat_titre">RESULTS</string>

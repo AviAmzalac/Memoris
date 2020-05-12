@@ -8,20 +8,21 @@
     <string name="button_back">Retour</string>
     <string name="button_ready">PRET</string>
     <string name="button_erase">Reset</string>
-    <string name="leaderboard_title">SCORES</string>
+    <string name="button_leaderboard">SCORES</string>
     <string name="soundicon">SoundIcon</string>
 
     <!-- Credits -->
     <string name="credit_title">CREDITS</string>
-    <string name="music">MUSIC</string>
-    <string name="thanks">ACKNOWLEDGEMENTS</string>
-    <string name="creators">CREATORS</string>
+    <string name="music">MUSIQUE</string>
+    <string name="thanks">REMERCIEMENTS</string>
+    <string name="creators">CREATEURS</string>
 
     <!-- tableau de bord -->
     <string name="essai_label">Essai</string>
-    <string name="difficulty_label">Difficultés</string>
+    <string name="difficulty_label">Difficulté</string>
     <string name="nb_rep_label">Réponses</string>
-    <string name="button_leaderboard">Leaderboard</string>
+    <string name="leaderboard_title">SCORES</string>
+
     <string name="perfect_label">PARFAIT</string>
 
     <!-- nouveau jeu -->
@@ -72,7 +73,7 @@
     <string name="whale">Baleine</string>
 
     <!-- indice -->
-    <string name="help">Attention : </string>
+    <string name="help">Attention \ </string>
 
     <!-- score -->
     <string name="resultat_titre">RESULTATS</string>
